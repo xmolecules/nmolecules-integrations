@@ -1,0 +1,32 @@
+﻿<#@ template language="C#" #>
+namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
+{
+    using System;
+    using NMolecules.DDD;
+
+    [<#= Session["type"] #>]
+    public class Some<#= Session["type"] #>
+    {
+    }
+    
+    [Entity]
+    public sealed class InvalidEntity
+    {
+        private readonly Some<#= Session["type"] #> <#= Session["name"] #>;
+        public InvalidEntity(Some<#= Session["type"] #> value)
+        {
+            Value = value;
+        }
+
+        [Identity]
+        public Guid Id { get; }
+        
+        public Some<#= Session["type"] #> Value { get; }
+
+        public Some<#= Session["type"] #> SomeMethod(Some<#= Session["type"] #> <#= Session["name"] #>)
+        {
+            var some<#= Session["type"] #> = new Some<#= Session["type"] #>();
+            return some<#= Session["type"] #>;
+        }
+    }
+}

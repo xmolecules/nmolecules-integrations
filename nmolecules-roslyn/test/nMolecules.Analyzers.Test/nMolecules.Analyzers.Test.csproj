@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+        <AssemblyName>NMolecules.Analyzers.Test</AssemblyName>
+        <RootNamespace>NMolecules.Analyzers.Test</RootNamespace>
+        <LangVersion>9</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.4.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Testing.Verifiers.XUnit" Version="1.1.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.1" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing.MSTest" Version="1.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.MSTest" Version="1.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeRefactoring.Testing.MSTest" Version="1.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing.MSTest" Version="1.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing.MSTest" Version="1.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing.MSTest" Version="1.1.0" />
+        <PackageReference Include="NMolecules.DDD" Version="0.2.1" />
+        <PackageReference Include="System.CodeDom" Version="6.0.0" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\nMolecules.Analyzers\nMolecules.Analyzers\nMolecules.Analyzers.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFiledNotReadonly.cs" />
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectNotSealed.cs" />
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithPublicPropertyGetter.cs" />
+        <Compile Remove="Attributes.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectNotSealed.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectUsesEntity.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFiledNotReadonly.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithPublicPropertyGetter.cs" />
+        <None Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+            <Generator>TextTemplatingFilePreprocessor</Generator>
+            <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+        </None>
+        <Compile Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
+        <None Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+          <Generator>TextTemplatingFilePreprocessor</Generator>
+          <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+        </None>
+        <Compile Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+</Project>

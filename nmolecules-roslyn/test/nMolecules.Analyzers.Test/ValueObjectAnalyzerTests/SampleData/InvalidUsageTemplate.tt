@@ -1,0 +1,44 @@
+﻿<#@ template language="C#" #>
+namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests.SampleData
+{
+    using System;
+    using NMolecules.DDD;
+
+    [<#= Session["type"] #>]
+    public class Some<#= Session["type"] #>
+    {
+    }
+    
+    [ValueObject]
+    public sealed class InvalidValueObject : IEquatable<InvalidValueObject>
+    {
+        private readonly Some<#= Session["type"] #> <#= Session["name"] #>;
+        public InvalidValueObject(Some<#= Session["type"] #> value)
+        {
+            Value = value;
+        }
+        
+        public Some<#= Session["type"] #> Value { get; }
+
+        public Some<#= Session["type"] #> SomeMethod(Some<#= Session["type"] #> <#= Session["name"] #>)
+        {
+            var some<#= Session["type"] #> = new Some<#= Session["type"] #>();
+            return some<#= Session["type"] #>;
+        }
+        
+        public bool Equals(InvalidValueObject other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Value == other.Value;
+        }
+        public override bool Equals(object obj)
+        {
+            return ReferenceEquals(this, obj) || obj is InvalidValueObject other && Equals(other);
+        }
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
+}
