@@ -33,30 +33,33 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
 
             var diagnostic = context.Diagnostics.First(it => it.Id.Equals(Rules.ValueObjectsMustBeSealedId));
             var diagnosticSpan = diagnostic.Location.SourceSpan;
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf()
-                .OfType<TypeDeclarationSyntax>().First();
+            var declaration = root!.FindToken(diagnosticSpan.Start).Parent!
+                .AncestorsAndSelf()
+                .OfType<TypeDeclarationSyntax>()
+                .First();
 
-
-            var makeClassSealed =
-                CodeAction.Create(Title, it => MakeClassSealed(context.Document, declaration, it), Title);
+            var makeClassSealed = CodeAction.Create(Title, it => MakeClassSealed(context.Document, declaration, it), Title);
             context.RegisterCodeFix(makeClassSealed, diagnostic);
-            var implementedIEquatable =
-                CodeAction.Create(Title, it => ImplementIEquatable(context.Document, declaration, it), Title);
+            var implementedIEquatable = CodeAction.Create(Title, it => ImplementIEquatable(context.Document, declaration, it), Title);
             context.RegisterCodeFix(implementedIEquatable, diagnostic);
         }
 
-        private Task<Document> ImplementIEquatable(Document contextDocument, TypeDeclarationSyntax declaration,
+        private Task<Document> ImplementIEquatable(
+            Document contextDocument,
+            TypeDeclarationSyntax declaration,
             CancellationToken it)
         {
             throw new NotImplementedException();
         }
 
-        private static async Task<Document> MakeClassSealed(Document document, TypeDeclarationSyntax typeDecl,
+        private static async Task<Document> MakeClassSealed(
+            Document document,
+            TypeDeclarationSyntax typeDecl,
             CancellationToken cancellationToken)
         {
             var newModifiers = typeDecl.AddModifiers(SyntaxFactory.Token(SyntaxKind.SealedKeyword));
             var syntaxRoot = await document.GetSyntaxRootAsync(cancellationToken);
-            var syntaxRootWithReplacedModifiers = syntaxRoot.ReplaceNode(typeDecl, newModifiers);
+            var syntaxRootWithReplacedModifiers = syntaxRoot!.ReplaceNode(typeDecl, newModifiers);
             return document.WithSyntaxRoot(syntaxRootWithReplacedModifiers);
         }
     }

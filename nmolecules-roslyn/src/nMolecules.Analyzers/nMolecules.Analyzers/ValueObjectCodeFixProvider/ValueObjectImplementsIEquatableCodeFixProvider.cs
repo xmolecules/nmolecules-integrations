@@ -30,16 +30,13 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
         public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
             var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
-
-            var diagnostic =
-                context.Diagnostics.First(it => it.Id.Equals(Rules.ValueObjectsMustImplementIEquatableId));
+            var diagnostic = context.Diagnostics.First(it => it.Id.Equals(Rules.ValueObjectsMustImplementIEquatableId));
             var diagnosticSpan = diagnostic.Location.SourceSpan;
-            var declaration = root!.FindToken(diagnosticSpan.Start)!.Parent.AncestorsAndSelf()
-                .OfType<TypeDeclarationSyntax>().First();
+            var declaration = root!.FindToken(diagnosticSpan.Start)!.Parent!.AncestorsAndSelf()
+                .OfType<TypeDeclarationSyntax>()
+                .First();
 
-
-            var implementedIEquatable =
-                CodeAction.Create(Title, it => ImplementIEquatable(context.Document, declaration, it), Title);
+            var implementedIEquatable = CodeAction.Create(Title, it => ImplementIEquatable(context.Document, declaration, it), Title);
             context.RegisterCodeFix(implementedIEquatable, diagnostic);
         }
 

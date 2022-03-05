@@ -20,7 +20,10 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 
         private static void EnsureFieldIsReadonly(SymbolAnalysisContext context, IFieldSymbol fieldSymbol)
         {
-            if (!fieldSymbol.IsReadOnly) context.ReportDiagnostic(fieldSymbol.ViolatesImmutability());
+            if (!(fieldSymbol.IsReadOnly || fieldSymbol.IsConst))
+            {
+                context.ReportDiagnostic(fieldSymbol.ViolatesImmutability());
+            }
         }
     }
 }

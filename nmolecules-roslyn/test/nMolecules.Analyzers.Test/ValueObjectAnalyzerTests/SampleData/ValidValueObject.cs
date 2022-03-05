@@ -6,6 +6,8 @@
     [ValueObject]
     public sealed class ValiedValueObject : IEquatable<ValiedValueObject>
     {
+        private const string SomePrivateConst = "const1";
+        public const string SomePublicConst = "const1";
         public ValiedValueObject(string value)
         {
             Value = value;
