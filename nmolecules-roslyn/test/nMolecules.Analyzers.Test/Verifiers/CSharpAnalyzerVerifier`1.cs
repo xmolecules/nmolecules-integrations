@@ -38,16 +38,12 @@ namespace NMolecules.Analyzers.Test.Verifiers
         /// <inheritdoc cref="AnalyzerVerifier{TAnalyzer, TTest, TVerifier}.VerifyAnalyzerAsync(string, DiagnosticResult[])" />
         public static async Task VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
         {
-            var attributesProject = new ProjectState(AttributesProjectName, LanguageNames.CSharp, string.Empty, "cs");
-            attributesProject.ReferenceAssemblies = ReferenceAssemblies.Default;
-            attributesProject.ReferenceAssemblies.AddAssemblies(ImmutableArray.Create<string>("nMolecules.DDD.dll"));
             var test = new Test
             {
                 TestCode = source,
                 TestState =
                 {
-                    AdditionalProjects = {{AttributesProjectName, attributesProject}},
-                    AdditionalProjectReferences = {AttributesProjectName}
+                    AdditionalReferences = { "nMolecules.DDD.dll" }
                 }
             };
 

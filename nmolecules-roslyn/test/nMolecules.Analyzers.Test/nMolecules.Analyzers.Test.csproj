@@ -22,7 +22,7 @@
         <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing.MSTest" Version="1.1.0" />
         <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing.MSTest" Version="1.1.0" />
         <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing.MSTest" Version="1.1.0" />
-        <PackageReference Include="NMolecules.DDD" Version="0.2.1" />
+        <PackageReference Include="NMolecules.DDD" Version="0.2.2-beta" />
         <PackageReference Include="System.CodeDom" Version="6.0.0" />
         <PackageReference Include="xunit" Version="2.4.1" />
     </ItemGroup>
