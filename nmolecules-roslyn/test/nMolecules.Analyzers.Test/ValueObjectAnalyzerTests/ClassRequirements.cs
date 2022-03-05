@@ -2,9 +2,8 @@
 using NMolecules.Analyzers.ValueObjectAnalyzers;
 using Xunit;
 using static Microsoft.CodeAnalysis.Testing.DiagnosticResult;
-using VerifyCS =
-    NMolecules.Analyzers.Test.Verifiers.CSharpAnalyzerVerifier<
-        NMolecules.Analyzers.ValueObjectAnalyzers.ValueObjectAnalyzer>;
+using VerifyCS = NMolecules.Analyzers.Test.Verifiers.CSharpAnalyzerVerifier<
+    NMolecules.Analyzers.ValueObjectAnalyzers.ValueObjectAnalyzer>;
 
 namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
 {

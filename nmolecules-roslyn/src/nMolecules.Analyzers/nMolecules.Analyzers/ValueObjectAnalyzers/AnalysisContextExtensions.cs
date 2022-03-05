@@ -7,32 +7,43 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 {
     public static class AnalysisContextExtensions
     {
-        public static void RegisterSymbolActionForValueObject(this AnalysisContext analysisContext,
-            Action<SymbolAnalysisContext> action, SymbolKind symbolKind)
+        public static void RegisterSymbolActionForValueObject(
+            this AnalysisContext analysisContext,
+            Action<SymbolAnalysisContext> action,
+            SymbolKind symbolKind)
         {
             analysisContext.RegisterSymbolAction(IfValueObject(action, symbolKind), symbolKind);
         }
 
-        private static Action<SymbolAnalysisContext> IfValueObject(Action<SymbolAnalysisContext> analyze,
+        private static Action<SymbolAnalysisContext> IfValueObject(
+            Action<SymbolAnalysisContext> analyze,
             SymbolKind symbolKind)
         {
             return symbolKind switch
             {
                 SymbolKind.NamedType => it =>
                 {
-                    var classType = (INamedTypeSymbol) it.Symbol;
-                    if (classType.IsValueObject()) analyze(it);
+                    var classType = (INamedTypeSymbol)it.Symbol;
+                    if (classType.IsValueObject())
+                    {
+                        analyze(it);
+                    }
                 },
                 _ => it =>
                 {
                     var classType = it.Symbol.ContainingType;
-                    if (classType.IsValueObject()) analyze(it);
+                    if (classType.IsValueObject())
+                    {
+                        analyze(it);
+                    }
                 }
             };
         }
 
-        public static void RegisterSyntaxNodeActionForValueObject(this AnalysisContext analysisContext,
-            Action<SyntaxNodeAnalysisContext> analysis, SyntaxKind syntaxKind)
+        public static void RegisterSyntaxNodeActionForValueObject(
+            this AnalysisContext analysisContext,
+            Action<SyntaxNodeAnalysisContext> analysis,
+            SyntaxKind syntaxKind)
         {
             analysisContext.RegisterSyntaxNodeAction(IfValueObject(analysis), syntaxKind);
         }
@@ -41,8 +52,11 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
         {
             return it =>
             {
-                if (it.ContainingSymbol is {ContainingSymbol: ITypeSymbol typeSymbol} &&
-                    typeSymbol.IsValueObject()) analyze(it);
+                if (it.ContainingSymbol is { ContainingSymbol: ITypeSymbol typeSymbol } &&
+                    typeSymbol.IsValueObject())
+                {
+                    analyze(it);
+                }
             };
         }
     }

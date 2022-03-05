@@ -15,20 +15,27 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
         private const string Category = "Design";
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseEntityRule = new(NoEntitiesInValueObjectsId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityTitle), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityTitle),
+                Resources.ResourceManager,
                 typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityDescription), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityDescription),
+                Resources.ResourceManager,
                 typeof(Resources)));
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseServiceRule = new(NoServicesInValueObjectsId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectUsesServiceTitle), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectUsesServiceTitle),
+                Resources.ResourceManager,
                 typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesServiceMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesServiceDescription),
@@ -36,10 +43,13 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
                 typeof(Resources)));
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseRepositoryRule = new(NoRepositoriesInValueObjectsId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectUsesRepositoryTitle), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectUsesRepositoryTitle),
+                Resources.ResourceManager,
                 typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesRepositoryMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesRepositoryDescription),
@@ -47,10 +57,13 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
                 typeof(Resources)));
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseAggregateRootRule = new(NoAggregateRootsInValueObjectsId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectUsesAggregateRootTitle), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectUsesAggregateRootTitle),
+                Resources.ResourceManager,
                 typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesAggregateRootMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesAggregateRootDescription),
@@ -58,33 +71,45 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
                 typeof(Resources)));
 
         public static readonly DiagnosticDescriptor ValueObjectMustBeImmutableRule = new(ValueObjectsMustBeImmutableId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableTitle), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableTitle),
+                Resources.ResourceManager,
                 typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableDescription),
-                Resources.ResourceManager, typeof(Resources)));
+                Resources.ResourceManager,
+                typeof(Resources)));
 
         public static readonly DiagnosticDescriptor ValueObjectMustImplementIEquatableRule = new(ValueObjectsMustImplementIEquatableId,
             new LocalizableResourceString(nameof(Resources.ValueObjectMustImplementIEquatableTitle),
-                Resources.ResourceManager, typeof(Resources)),
+                Resources.ResourceManager,
+                typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectMustImplementIEquatableMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.ValueObjectMustImplementIEquatableDescription),
-                Resources.ResourceManager, typeof(Resources)));
+                Resources.ResourceManager,
+                typeof(Resources)));
 
         public static readonly DiagnosticDescriptor ValueObjectMustBeSealedRule = new(ValueObjectsMustBeSealedId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedTitle), Resources.ResourceManager,
+            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedTitle),
+                Resources.ResourceManager,
                 typeof(Resources)),
             new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedMessageFormat),
-                Resources.ResourceManager, typeof(Resources)), Category,
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedDescription),
-                Resources.ResourceManager, typeof(Resources)));
+                Resources.ResourceManager,
+                typeof(Resources)));
     }
 }

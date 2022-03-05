@@ -14,22 +14,13 @@ namespace NMolecules.Analyzers.Test.Verifiers
         where TCodeFix : CodeFixProvider, new()
     {
         /// <inheritdoc cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.Diagnostic()" />
-        public static DiagnosticResult Diagnostic()
-        {
-            return VisualBasicCodeFixVerifier<TAnalyzer, TCodeFix, XUnitVerifier>.Diagnostic();
-        }
+        public static DiagnosticResult Diagnostic() => VisualBasicCodeFixVerifier<TAnalyzer, TCodeFix, XUnitVerifier>.Diagnostic();
 
         /// <inheritdoc cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.Diagnostic(string)" />
-        public static DiagnosticResult Diagnostic(string diagnosticId)
-        {
-            return VisualBasicCodeFixVerifier<TAnalyzer, TCodeFix, XUnitVerifier>.Diagnostic(diagnosticId);
-        }
+        public static DiagnosticResult Diagnostic(string diagnosticId) => VisualBasicCodeFixVerifier<TAnalyzer, TCodeFix, XUnitVerifier>.Diagnostic(diagnosticId);
 
         /// <inheritdoc cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.Diagnostic(DiagnosticDescriptor)" />
-        public static DiagnosticResult Diagnostic(DiagnosticDescriptor descriptor)
-        {
-            return VisualBasicCodeFixVerifier<TAnalyzer, TCodeFix, XUnitVerifier>.Diagnostic(descriptor);
-        }
+        public static DiagnosticResult Diagnostic(DiagnosticDescriptor descriptor) => VisualBasicCodeFixVerifier<TAnalyzer, TCodeFix, XUnitVerifier>.Diagnostic(descriptor);
 
         /// <inheritdoc
         ///     cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.VerifyAnalyzerAsync(string, DiagnosticResult[])" />
@@ -54,7 +45,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
         ///     cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.VerifyCodeFixAsync(string, DiagnosticResult, string)" />
         public static async Task VerifyCodeFixAsync(string source, DiagnosticResult expected, string fixedSource)
         {
-            await VerifyCodeFixAsync(source, new[] {expected}, fixedSource);
+            await VerifyCodeFixAsync(source, new[] { expected }, fixedSource);
         }
 
         /// <inheritdoc

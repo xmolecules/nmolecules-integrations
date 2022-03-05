@@ -48,15 +48,15 @@
             <Generator>TextTemplatingFilePreprocessor</Generator>
             <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
         </None>
+        <None Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+            <Generator>TextTemplatingFilePreprocessor</Generator>
+            <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+        </None>
         <Compile Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
           <AutoGen>True</AutoGen>
           <DesignTime>True</DesignTime>
           <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
-        <None Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
-          <Generator>TextTemplatingFilePreprocessor</Generator>
-          <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
-        </None>
         <Compile Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
           <AutoGen>True</AutoGen>
           <DesignTime>True</DesignTime>

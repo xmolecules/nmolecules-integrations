@@ -7,6 +7,9 @@ namespace NMolecules.Analyzers.EntityAnalyzers
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class EntityAnalyzer : DiagnosticAnalyzer
     {
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
+            ImmutableArray.Create(Rules.EntitiesMustNotUseRepositoriesRule);
+
         public override void Initialize(AnalysisContext context)
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
@@ -14,8 +17,5 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             context.EnableConcurrentExecution();
             context.RegisterSymbolActionForEntity(FieldAnalyzer.AnalyzeField, SymbolKind.Field);
         }
-
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
-            ImmutableArray.Create(Rules.EntitiesMustNotUseRepositoriesRule);
     }
 }

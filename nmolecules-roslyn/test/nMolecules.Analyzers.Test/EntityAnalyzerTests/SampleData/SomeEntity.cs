@@ -9,14 +9,12 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
         {
             Id = id;
         }
-        
-        [Identity]
-        public int Id { get; }
+
+        [Identity] public int Id { get; }
     }
-    
+
     [Entity]
     public class MyEntity
     {
-        
     }
 }

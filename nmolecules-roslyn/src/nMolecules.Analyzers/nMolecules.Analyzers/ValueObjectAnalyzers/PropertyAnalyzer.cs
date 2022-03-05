@@ -8,20 +8,22 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
     {
         public static void AnalyzeProperty(SymbolAnalysisContext context)
         {
-            var propertySymbol = (IPropertySymbol) context.Symbol;
+            var propertySymbol = (IPropertySymbol)context.Symbol;
             EnsureThatPropertyIsReadonly(context, propertySymbol);
             EnsureThatPropertyIsNotOfAnEntityType(context, propertySymbol);
         }
 
-        private static void EnsureThatPropertyIsNotOfAnEntityType(SymbolAnalysisContext context,
-            IPropertySymbol propertySymbol)
+        private static void EnsureThatPropertyIsNotOfAnEntityType(SymbolAnalysisContext context, IPropertySymbol propertySymbol)
         {
             EnsureTypeIsAllowed(context, propertySymbol, propertySymbol.Type);
         }
 
         private static void EnsureThatPropertyIsReadonly(SymbolAnalysisContext context, IPropertySymbol propertySymbol)
         {
-            if (!propertySymbol.IsReadOnly) context.ReportDiagnostic(propertySymbol.ViolatesImmutability());
+            if (!propertySymbol.IsReadOnly)
+            {
+                context.ReportDiagnostic(propertySymbol.ViolatesImmutability());
+            }
         }
     }
 }

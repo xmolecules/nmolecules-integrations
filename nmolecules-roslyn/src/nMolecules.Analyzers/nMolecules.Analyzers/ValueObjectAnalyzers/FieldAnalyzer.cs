@@ -8,7 +8,7 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
     {
         public static void AnalyzeField(SymbolAnalysisContext context)
         {
-            var fieldSymbol = (IFieldSymbol) context.Symbol;
+            var fieldSymbol = (IFieldSymbol)context.Symbol;
             EnsureFieldIsReadonly(context, fieldSymbol);
             EnsureFieldIsNoEntity(context, fieldSymbol);
         }

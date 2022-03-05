@@ -27,18 +27,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\nMolecules.Analyzers.CodeFixes\nMolecules.Analyzers.CodeFixes.csproj" />
-        <ProjectReference Include="..\nMolecules.Analyzers\nMolecules.Analyzers.csproj" />
+        <ProjectReference Include="..\nMolecules.Analyzers.CodeFixes\nMolecules.Analyzers.CodeFixes.csproj"/>
+        <ProjectReference Include="..\nMolecules.Analyzers\nMolecules.Analyzers.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath="" />
+        <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <Target Name="_AddAnalyzersToOutput">
         <ItemGroup>
-            <TfmSpecificPackageFile Include="$(OutputPath)\nMolecules.Analyzers.dll" PackagePath="analyzers/dotnet/cs" />
-            <TfmSpecificPackageFile Include="$(OutputPath)\nMolecules.Analyzers.CodeFixes.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(OutputPath)\nMolecules.Analyzers.dll" PackagePath="analyzers/dotnet/cs"/>
+            <TfmSpecificPackageFile Include="$(OutputPath)\nMolecules.Analyzers.CodeFixes.dll" PackagePath="analyzers/dotnet/cs"/>
         </ItemGroup>
     </Target>
 

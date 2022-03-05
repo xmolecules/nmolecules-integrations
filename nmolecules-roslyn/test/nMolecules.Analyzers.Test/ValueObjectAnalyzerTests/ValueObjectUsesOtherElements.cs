@@ -121,7 +121,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         {
             var invalidUsageTemplate = new InvalidUsageTemplate
             {
-                Session = new Dictionary<string, object> {{"type", type}, {"name", type.ToLowerInvariant()}}
+                Session = new Dictionary<string, object> { { "type", type }, { "name", type.ToLowerInvariant() } }
             };
             return invalidUsageTemplate.TransformText();
         }

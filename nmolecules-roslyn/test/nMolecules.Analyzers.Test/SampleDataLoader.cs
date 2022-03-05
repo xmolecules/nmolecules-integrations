@@ -34,10 +34,7 @@ namespace NMolecules.Analyzers.Test
             }
         }
 
-        public static IEnumerable<(string filename, string content)> GetAttributes()
-        {
-            return Attributes.Value;
-        }
+        public static IEnumerable<(string filename, string content)> GetAttributes() => Attributes.Value;
 
         public static string LoadFromNamespaceOf<T>(string sampleName)
         {

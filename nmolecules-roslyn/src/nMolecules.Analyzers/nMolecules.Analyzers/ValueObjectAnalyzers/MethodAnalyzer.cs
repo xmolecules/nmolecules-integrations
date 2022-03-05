@@ -11,17 +11,17 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
     {
         public static void AnalyzeMethod(SymbolAnalysisContext context)
         {
-            var method = (IMethodSymbol) context.Symbol;
-            if (IsProperty(method)) return;
+            var method = (IMethodSymbol)context.Symbol;
+            if (IsProperty(method))
+            {
+                return;
+            }
 
             EnsureOnlyAllowedTypesAsParameters(context, method);
             EnsureOnlyAllowedTypesAsReturnValue(context, method);
         }
 
-        private static bool IsProperty(IMethodSymbol method)
-        {
-            return method.MethodKind == MethodKind.PropertyGet || method.MethodKind == MethodKind.PropertySet;
-        }
+        private static bool IsProperty(IMethodSymbol method) => method.MethodKind is MethodKind.PropertyGet or MethodKind.PropertySet;
 
         private static void EnsureOnlyAllowedTypesAsReturnValue(SymbolAnalysisContext context, IMethodSymbol method)
         {
@@ -43,9 +43,9 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 
         public static void AnalyzeDeclarations(SyntaxNodeAnalysisContext context)
         {
-            var localDeclaration = (LocalDeclarationStatementSyntax) context.Node;
+            var localDeclaration = (LocalDeclarationStatementSyntax)context.Node;
             var variable = localDeclaration.Declaration.Variables.Single();
-            var declaredSymbol = (ILocalSymbol) context.SemanticModel.GetDeclaredSymbol(variable)!;
+            var declaredSymbol = (ILocalSymbol)context.SemanticModel.GetDeclaredSymbol(variable)!;
             EnsureTypeIsAllowed(context, declaredSymbol, declaredSymbol.Type);
         }
     }

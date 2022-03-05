@@ -8,7 +8,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
     {
         public static void AnalyzeField(SymbolAnalysisContext context)
         {
-            var fieldSymbol = (IFieldSymbol) context.Symbol;
+            var fieldSymbol = (IFieldSymbol)context.Symbol;
             EnsureFieldIsNoEntity(context, fieldSymbol);
         }
 

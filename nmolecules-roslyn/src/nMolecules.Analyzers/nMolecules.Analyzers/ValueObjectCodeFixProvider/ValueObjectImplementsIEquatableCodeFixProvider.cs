@@ -22,10 +22,7 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
         public sealed override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(Rules.ValueObjectsMustImplementIEquatableId);
 
-        public sealed override FixAllProvider GetFixAllProvider()
-        {
-            return WellKnownFixAllProviders.BatchFixer;
-        }
+        public sealed override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 
         public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
@@ -40,7 +37,9 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
             context.RegisterCodeFix(implementedIEquatable, diagnostic);
         }
 
-        private async Task<Document> ImplementIEquatable(Document contextDocument, TypeDeclarationSyntax declaration,
+        private async Task<Document> ImplementIEquatable(
+            Document contextDocument,
+            TypeDeclarationSyntax declaration,
             CancellationToken cancellationToken)
         {
             var className = declaration.Identifier.Text;

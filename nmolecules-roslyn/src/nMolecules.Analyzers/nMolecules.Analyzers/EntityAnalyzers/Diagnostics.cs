@@ -19,11 +19,11 @@ namespace NMolecules.Analyzers.EntityAnalyzers
         private static void EnsureTypeIsAllowed(Action<Diagnostic> reportDiagnostic, ISymbol symbol, ITypeSymbol type)
         {
             if (type.IsRepository())
+            {
                 reportDiagnostic(symbol.ViolatesRepositoryUsage());
+            }
         }
-        private static Diagnostic ViolatesRepositoryUsage(this ISymbol symbol)
-        {
-            return symbol.Diagnostic(Rules.EntitiesMustNotUseRepositoriesRule);
-        }
+
+        private static Diagnostic ViolatesRepositoryUsage(this ISymbol symbol) => symbol.Diagnostic(Rules.EntitiesMustNotUseRepositoriesRule);
     }
 }

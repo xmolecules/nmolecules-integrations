@@ -15,7 +15,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests.SampleData
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+    #line 1 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class InvalidUsageTemplate : InvalidUsageTemplateBase
     {
@@ -27,84 +27,84 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests.SampleData
         {
             this.Write("namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests.SampleData\r\n{\r\n    using System;\r\n    using NMolecules.DDD;\r\n\r\n    [");
             
-            #line 7 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 7 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write("]\r\n    public class Some");
             
-            #line 8 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 8 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n    }\r\n    \r\n    [ValueObject]\r\n    public sealed class InvalidValueObject : IEquatable<InvalidValueObject>\r\n    {\r\n        private readonly Some");
             
-            #line 15 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 15 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 15 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 15 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["name"]));
             
             #line default
             #line hidden
             this.Write(";\r\n        public InvalidValueObject(Some");
             
-            #line 16 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 16 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write(" value)\r\n        {\r\n            Value = value;\r\n        }\r\n        \r\n        public Some");
             
-            #line 21 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 21 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write(" Value { get; }\r\n\r\n        public Some");
             
-            #line 23 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 23 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write(" SomeMethod(Some");
             
-            #line 23 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 23 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 23 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 23 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["name"]));
             
             #line default
             #line hidden
             this.Write(")\r\n        {\r\n            var some");
             
-            #line 25 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 25 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write(" = new Some");
             
-            #line 25 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 25 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
             #line hidden
             this.Write("();\r\n            return some");
             
-            #line 26 "C:\Users\LarsB\source\github\nmolecules\tests\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
+            #line 26 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
             
             #line default
