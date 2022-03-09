@@ -15,7 +15,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
         private const int FieldLineNumber = 14;
         private const int CtorLineNumber = 15;
         private const int PropertyLineNumber = 20;
-        private const int MethodLineNumber = 22;
+        private const int MethodLineNumber = 25;
         private const int EntityInMethodBodyLineNumber = 24;
 
         [Fact]
@@ -23,7 +23,10 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
         {
             var entity = GenerateClass(Repository);
             var repositoryAsField = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
-            await VerifyCS.VerifyAnalyzerAsync(entity, repositoryAsField);
+            var repositoryAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(CtorLineNumber, 45, CtorLineNumber, 50);
+            var repositoryAsReturnValue = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
+            var repositoryAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
+            await VerifyCS.VerifyAnalyzerAsync(entity, repositoryAsField, repositoryAsParameterInCtor, repositoryAsParameterInMethod, repositoryAsReturnValue);
         }
 
         [Fact(Skip = "WiP")]
@@ -33,7 +36,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
             var aggregateAsField = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
             await VerifyCS.VerifyAnalyzerAsync(entity, aggregateAsField);
         }
-        
+
         private static string GenerateClass(string type)
         {
             var invalidUsageTemplate = new InvalidUsageTemplate

@@ -16,6 +16,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
                                                    GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
             context.RegisterSymbolActionForEntity(FieldAnalyzer.AnalyzeField, SymbolKind.Field);
+            context.RegisterSymbolActionForEntity(MethodAnalyzer.AnalyzeMethod, SymbolKind.Method);
         }
     }
 }
