@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.CodeAnalysis;
 using NMolecules.DDD;
+using NMolecules.DDD.Attributes;
 
 namespace NMolecules.Analyzers
 {

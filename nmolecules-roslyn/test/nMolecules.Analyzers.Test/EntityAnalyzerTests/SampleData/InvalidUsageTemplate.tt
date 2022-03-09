@@ -2,7 +2,7 @@
 namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
 {
     using System;
-    using NMolecules.DDD;
+    using NMolecules.DDD;using NMolecules.DDD.Attributes; // Needed for current inconsistencies in namespaces in attributes
 
     [<#= Session["type"] #>]
     public class Some<#= Session["type"] #>

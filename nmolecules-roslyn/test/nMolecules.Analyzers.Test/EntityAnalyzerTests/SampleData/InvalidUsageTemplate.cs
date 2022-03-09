@@ -25,7 +25,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData\r\n{\r\n    using System;\r\n    using NMolecules.DDD;\r\n\r\n    [");
+            this.Write("namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData\r\n{\r\n    using System;\r\n    using NMolecules.DDD;using NMolecules.DDD.Attributes; // Needed for current inconsistencies in namespaces in attributes\r\n\r\n    [");
             
             #line 7 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
