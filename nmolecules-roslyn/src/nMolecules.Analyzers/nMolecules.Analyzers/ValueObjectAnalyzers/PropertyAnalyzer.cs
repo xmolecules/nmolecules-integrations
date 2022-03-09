@@ -15,7 +15,7 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 
         private static void EnsureThatPropertyIsNotOfAnEntityType(SymbolAnalysisContext context, IPropertySymbol propertySymbol)
         {
-            EnsureTypeIsAllowed(context, propertySymbol, propertySymbol.Type);
+            EnsureTypeIsAllowedInSymbol(context, propertySymbol, propertySymbol.Type);
         }
 
         private static void EnsureThatPropertyIsReadonly(SymbolAnalysisContext context, IPropertySymbol propertySymbol)

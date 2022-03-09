@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using static NMolecules.Analyzers.ValueObjectAnalyzers.Rules;
@@ -13,12 +15,12 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 
         public static Diagnostic IsNotSealed(this ISymbol symbol) => symbol.Diagnostic(ValueObjectMustBeSealedRule);
 
-        public static void EnsureTypeIsAllowed(SymbolAnalysisContext context, ISymbol symbol, ITypeSymbol type)
+        public static void EnsureTypeIsAllowedInSymbol(SymbolAnalysisContext context, ISymbol symbol, ITypeSymbol type)
         {
             EnsureTypeIsAllowed(context.ReportDiagnostic, symbol, type);
         }
 
-        public static void EnsureTypeIsAllowed(SyntaxNodeAnalysisContext context, ISymbol symbol, ITypeSymbol type)
+        public static void EnsureTypeIsAllowedInLocalSymbol(SyntaxNodeAnalysisContext context, ISymbol symbol, ITypeSymbol type)
         {
             EnsureTypeIsAllowed(context.ReportDiagnostic, symbol, type);
         }
@@ -44,6 +46,30 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
             {
                 reportDiagnostic(symbol.ViolatesAggregateRootUsage());
             }
+        }
+
+        public static IEnumerable<Diagnostic> AnalyzeTypeUsageInSymbol(ISymbol symbol, ITypeSymbol type)
+        {
+            if (type.IsEntity())
+            {
+                yield return symbol.ViolatesEntityUsage();
+            }
+
+            if (type.IsService())
+            {
+                yield return symbol.ViolatesServiceUsage();
+            }
+
+            if (type.IsRepository())
+            {
+                yield return symbol.ViolatesRepositoryUsage();
+            }
+
+            if (type.IsAggregateRoot())
+            {
+                yield return symbol.ViolatesAggregateRootUsage();
+            }
+            
         }
 
         private static Diagnostic ViolatesEntityUsage(this ISymbol symbol) => symbol.Diagnostic(ValueObjectMustNotUseEntityRule);

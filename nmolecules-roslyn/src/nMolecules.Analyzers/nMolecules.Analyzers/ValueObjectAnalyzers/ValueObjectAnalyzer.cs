@@ -3,8 +3,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using static NMolecules.Analyzers.ValueObjectAnalyzers.PropertyAnalyzer;
-using static NMolecules.Analyzers.ValueObjectAnalyzers.MethodAnalyzer;
-using static NMolecules.Analyzers.ValueObjectAnalyzers.FieldAnalyzer;
 using static NMolecules.Analyzers.ValueObjectAnalyzers.ClassSymbolAnalyzer;
 using static NMolecules.Analyzers.ValueObjectAnalyzers.Rules;
 
@@ -27,11 +25,13 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                    GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
-            context.RegisterSymbolActionForValueObject(AnalyzeMethod, SymbolKind.Method);
+            var methodAnalyzer = new Common.MethodAnalyzer(Diagnostics.AnalyzeTypeUsageInSymbol);
+            context.RegisterSymbolActionForValueObject(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
             context.RegisterSymbolActionForValueObject(AnalyzeProperty, SymbolKind.Property);
             context.RegisterSymbolActionForValueObject(AnalyzeType, SymbolKind.NamedType);
-            context.RegisterSymbolActionForValueObject(AnalyzeField, SymbolKind.Field);
-            context.RegisterSyntaxNodeActionForValueObject(AnalyzeDeclarations, SyntaxKind.LocalDeclarationStatement);
+            var valueObjectFieldAnalyzer = new ValueObjectFieldAnalyzer();
+            context.RegisterSymbolActionForValueObject(valueObjectFieldAnalyzer.AnalyzeField, SymbolKind.Field);
+            context.RegisterSyntaxNodeActionForValueObject(methodAnalyzer.AnalyzeDeclarations, SyntaxKind.LocalDeclarationStatement);
         }
     }
 }

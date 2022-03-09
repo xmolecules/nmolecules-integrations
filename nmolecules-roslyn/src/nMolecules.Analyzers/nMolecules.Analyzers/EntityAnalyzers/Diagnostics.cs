@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 
@@ -21,6 +22,14 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             if (type.IsRepository())
             {
                 reportDiagnostic(symbol.ViolatesRepositoryUsage());
+            }
+        }
+
+        public static IEnumerable<Diagnostic> AnalyzeTypeInSymbol(ISymbol symbol, ITypeSymbol type)
+        {
+            if (type.IsRepository())
+            {
+                yield return symbol.ViolatesRepositoryUsage();
             }
         }
 

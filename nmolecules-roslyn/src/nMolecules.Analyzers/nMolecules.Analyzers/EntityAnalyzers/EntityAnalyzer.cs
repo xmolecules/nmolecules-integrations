@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
+using NMolecules.Analyzers.Common;
 
 namespace NMolecules.Analyzers.EntityAnalyzers
 {
@@ -15,8 +16,10 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                    GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
-            context.RegisterSymbolActionForEntity(FieldAnalyzer.AnalyzeField, SymbolKind.Field);
-            context.RegisterSymbolActionForEntity(MethodAnalyzer.AnalyzeMethod, SymbolKind.Method);
+            var fieldAnalyzer = new FieldAnalyzer(Diagnostics.AnalyzeTypeInSymbol);
+            context.RegisterSymbolActionForEntity(fieldAnalyzer.AnalyzeField, SymbolKind.Field);
+            var methodAnalyzer = new MethodAnalyzer(Diagnostics.AnalyzeTypeInSymbol);
+            context.RegisterSymbolActionForEntity(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
         }
     }
 }
