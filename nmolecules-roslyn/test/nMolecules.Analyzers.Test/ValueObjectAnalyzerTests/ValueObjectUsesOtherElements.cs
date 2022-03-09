@@ -6,6 +6,7 @@ using Xunit;
 using static Microsoft.CodeAnalysis.Testing.DiagnosticResult;
 using VerifyCS = NMolecules.Analyzers.Test.Verifiers.CSharpAnalyzerVerifier<
     NMolecules.Analyzers.ValueObjectAnalyzers.ValueObjectAnalyzer>;
+using static NMolecules.Analyzers.Test.ElementNames;
 
 namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
 {
@@ -20,7 +21,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         [Fact]
         public async Task Analyze_WithValueObjectUsesEntity_EmitsCompilerError()
         {
-            var testCode = GenerateClass("Entity");
+            var testCode = GenerateClass(Entity);
             var entityAsField = CompilerError(Rules.NoEntitiesInValueObjectsId)
                 .WithSpan(EntityFieldLineNumber, 37, EntityFieldLineNumber, 43);
             var entityAsParameterInCtor = CompilerError(Rules.NoEntitiesInValueObjectsId)
@@ -45,7 +46,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         [Fact]
         public async Task Analyze_WithValueObjectUsesService_EmitsCompilerError()
         {
-            var testCode = GenerateClass("Service");
+            var testCode = GenerateClass(Service);
             var entityAsField = CompilerError(Rules.NoServicesInValueObjectsId)
                 .WithSpan(EntityFieldLineNumber, 38, EntityFieldLineNumber, 45);
             var entityAsParameterInCtor = CompilerError(Rules.NoServicesInValueObjectsId)
@@ -70,7 +71,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         [Fact]
         public async Task Analyze_WithValueObjectUsesRepository_EmitsCompilerError()
         {
-            var testCode = GenerateClass("Repository");
+            var testCode = GenerateClass(Repository);
             var entityAsField = CompilerError(Rules.NoRepositoriesInValueObjectsId)
                 .WithSpan(EntityFieldLineNumber, 41, EntityFieldLineNumber, 51);
             var entityAsParameterInCtor = CompilerError(Rules.NoRepositoriesInValueObjectsId)
@@ -95,7 +96,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         [Fact]
         public async Task Analyze_WithValueObjectUsesAggregateRoot_EmitsCompilerError()
         {
-            var testCode = GenerateClass("AggregateRoot");
+            var testCode = GenerateClass(AggregateRoot);
             var entityAsField = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
                 .WithSpan(EntityFieldLineNumber, 44, EntityFieldLineNumber, 57);
             var entityAsParameterInCtor = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
