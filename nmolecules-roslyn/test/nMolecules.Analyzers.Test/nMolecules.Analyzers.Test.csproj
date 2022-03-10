@@ -32,6 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\ValidMaximumEntity.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFiledNotReadonly.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />

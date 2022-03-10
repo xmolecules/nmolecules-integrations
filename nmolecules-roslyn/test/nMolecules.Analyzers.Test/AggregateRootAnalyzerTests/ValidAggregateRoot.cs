@@ -7,7 +7,7 @@ namespace NMolecules.Analyzers.Test.AggregateRootAnalyzerTests
     public class ValidAggregateRoot
     {
         [Fact]
-        public async Task Analyze_validAggregateRoot_DoesNotEmitAnyError()
+        public async Task Analyze_ValidAggregateRoot_DoesNotEmitAnyError()
         {
             var validAggregateRoot = SampleDataLoader.LoadFromNamespaceOf<ValidAggregateRoot>("ValidMaximumAggregate.cs");
             await VerifyCS.VerifyAnalyzerAsync(validAggregateRoot);
