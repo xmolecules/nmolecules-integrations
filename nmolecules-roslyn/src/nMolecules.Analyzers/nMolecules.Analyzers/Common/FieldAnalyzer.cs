@@ -13,7 +13,7 @@ namespace NMolecules.Analyzers.Common
         {
             this.analyzeField = analyzeField;
         }
-        
+
         public void AnalyzeField(SymbolAnalysisContext context)
         {
             var fieldSymbol = (IFieldSymbol)context.Symbol;

@@ -13,10 +13,7 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
         {
         }
 
-        private static IEnumerable<Diagnostic> AnalyzeField(IFieldSymbol symbol)
-        {
-            return AnalyzeTypeUsageInSymbol(symbol, symbol.Type).Concat(EnsureFieldIsReadonly(symbol));
-        }
+        private static IEnumerable<Diagnostic> AnalyzeField(IFieldSymbol symbol) => AnalyzeTypeUsageInSymbol(symbol, symbol.Type).Concat(EnsureFieldIsReadonly(symbol));
 
         private static IEnumerable<Diagnostic> EnsureFieldIsReadonly(IFieldSymbol fieldSymbol)
         {

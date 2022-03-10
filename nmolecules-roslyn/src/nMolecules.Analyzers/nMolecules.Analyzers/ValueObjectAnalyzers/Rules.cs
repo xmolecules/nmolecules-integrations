@@ -8,7 +8,6 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
         public const string ValueObjectsMustBeSealedId = nameof(ValueObjectsMustBeSealedId);
         public const string NoEntitiesInValueObjectsId = nameof(NoEntitiesInValueObjectsId);
         public const string NoServicesInValueObjectsId = nameof(NoServicesInValueObjectsId);
-        public const string NoFactoriesInValueObjectsId = nameof(NoFactoriesInValueObjectsId);
         public const string NoRepositoriesInValueObjectsId = nameof(NoRepositoriesInValueObjectsId);
         public const string NoAggregateRootsInValueObjectsId = nameof(NoAggregateRootsInValueObjectsId);
         public const string ValueObjectsMustBeImmutableId = nameof(ValueObjectsMustBeImmutableId);

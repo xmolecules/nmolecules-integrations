@@ -13,7 +13,7 @@ namespace NMolecules.Analyzers
                 context.ReportDiagnostic(violation);
             }
         }
-        
+
         public static void ReportDiagnostics(this SyntaxNodeAnalysisContext context, IEnumerable<Diagnostic> violations)
         {
             foreach (var violation in violations)

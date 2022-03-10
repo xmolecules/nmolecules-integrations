@@ -2,8 +2,7 @@ using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
-using static NMolecules.Analyzers.ValueObjectAnalyzers.PropertyAnalyzer;
-using static NMolecules.Analyzers.ValueObjectAnalyzers.ClassSymbolAnalyzer;
+using NMolecules.Analyzers.Common;
 using static NMolecules.Analyzers.ValueObjectAnalyzers.Rules;
 
 namespace NMolecules.Analyzers.ValueObjectAnalyzers
@@ -25,10 +24,11 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                    GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
-            var methodAnalyzer = new Common.MethodAnalyzer(Diagnostics.AnalyzeTypeUsageInSymbol);
+            var methodAnalyzer = new MethodAnalyzer(Diagnostics.AnalyzeTypeUsageInSymbol);
             context.RegisterSymbolActionForValueObject(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
-            context.RegisterSymbolActionForValueObject(AnalyzeProperty, SymbolKind.Property);
-            context.RegisterSymbolActionForValueObject(AnalyzeType, SymbolKind.NamedType);
+            var propertyAnalyzer = new ValueObjectPropertyAnalyzer();
+            context.RegisterSymbolActionForValueObject(propertyAnalyzer.AnalyzeProperty, SymbolKind.Property);
+            context.RegisterSymbolActionForValueObject(ClassSymbolAnalyzer.AnalyzeType, SymbolKind.NamedType);
             var valueObjectFieldAnalyzer = new ValueObjectFieldAnalyzer();
             context.RegisterSymbolActionForValueObject(valueObjectFieldAnalyzer.AnalyzeField, SymbolKind.Field);
             context.RegisterSyntaxNodeActionForValueObject(methodAnalyzer.AnalyzeDeclarations, SyntaxKind.LocalDeclarationStatement);

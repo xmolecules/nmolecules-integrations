@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -69,7 +68,6 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
             {
                 yield return symbol.ViolatesAggregateRootUsage();
             }
-            
         }
 
         private static Diagnostic ViolatesEntityUsage(this ISymbol symbol) => symbol.Diagnostic(ValueObjectMustNotUseEntityRule);

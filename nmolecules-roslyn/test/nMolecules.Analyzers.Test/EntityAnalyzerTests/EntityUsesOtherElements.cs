@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMolecules.Analyzers.EntityAnalyzers;
 using NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData;
 using Xunit;
@@ -16,7 +15,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
         private const int CtorLineNumber = 15;
         private const int PropertyLineNumber = 23;
         private const int MethodLineNumber = 25;
-        private const int EntityInMethodBodyLineNumber = 24;
+        private const int TypeViolationInMethodBodyLineNumber = 27;
 
         [Fact]
         public async Task Analyze_WithEntityUsesRepository_EmitsCompilerError()
@@ -27,12 +26,15 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
             var repositoryAsReturnValue = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
             var repositoryAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
             var repositoryAsPropertyType = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
+            var repositoryInMethodBody = CompilerError(Rules.EntitiesMustNotUseRepositoriesId)
+                .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 31);
             await VerifyCS.VerifyAnalyzerAsync(entity,
                 repositoryAsField,
                 repositoryAsParameterInCtor,
                 repositoryAsParameterInMethod,
                 repositoryAsReturnValue,
-                repositoryAsPropertyType);
+                repositoryAsPropertyType,
+                repositoryInMethodBody);
         }
 
         [Fact(Skip = "WiP")]
