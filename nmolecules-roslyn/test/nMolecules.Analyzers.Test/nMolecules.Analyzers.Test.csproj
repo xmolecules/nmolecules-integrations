@@ -62,6 +62,17 @@
             <DesignTime>True</DesignTime>
             <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
+        <None Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+          <Generator>TextTemplatingFilePreprocessor</Generator>
+          <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+        </None>
+        <Compile Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
+        <Compile Remove="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
     </ItemGroup>
 
 </Project>

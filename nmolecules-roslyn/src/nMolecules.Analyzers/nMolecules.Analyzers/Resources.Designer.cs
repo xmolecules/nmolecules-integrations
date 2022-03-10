@@ -61,6 +61,60 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should not reference repositories..
+        /// </summary>
+        internal static string AggregateRootMustNotUseRepositoryDescription {
+            get {
+                return ResourceManager.GetString("AggregateRootMustNotUseRepositoryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should not reference repositories.
+        /// </summary>
+        internal static string AggregateRootMustNotUseRepositoryFormat {
+            get {
+                return ResourceManager.GetString("AggregateRootMustNotUseRepositoryFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should not reference repositories.
+        /// </summary>
+        internal static string AggregateRootMustNotUseRepositoryTitle {
+            get {
+                return ResourceManager.GetString("AggregateRootMustNotUseRepositoryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should not reference services..
+        /// </summary>
+        internal static string AggregateRootMustNotUseServiceDescription {
+            get {
+                return ResourceManager.GetString("AggregateRootMustNotUseServiceDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should not reference services.
+        /// </summary>
+        internal static string AggregateRootMustNotUseServiceFormat {
+            get {
+                return ResourceManager.GetString("AggregateRootMustNotUseServiceFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should not reference services.
+        /// </summary>
+        internal static string AggregateRootMustNotUseServiceTitle {
+            get {
+                return ResourceManager.GetString("AggregateRootMustNotUseServiceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entities should not reference aggregate roots..
         /// </summary>
         internal static string EntityMustNotUseAggregateRootDescription {
