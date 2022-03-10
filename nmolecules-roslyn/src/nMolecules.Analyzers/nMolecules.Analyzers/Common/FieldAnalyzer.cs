@@ -7,17 +7,17 @@ namespace NMolecules.Analyzers.Common
 {
     public class FieldAnalyzer
     {
-        private readonly Func<IFieldSymbol, ITypeSymbol, IEnumerable<Diagnostic>> analyzeTypeUsageInSymbol;
+        private readonly Func<IFieldSymbol, IEnumerable<Diagnostic>> analyzeField;
 
-        public FieldAnalyzer(Func<IFieldSymbol, ITypeSymbol, IEnumerable<Diagnostic>> analyzeTypeUsageInSymbol)
+        public FieldAnalyzer(Func<IFieldSymbol, IEnumerable<Diagnostic>> analyzeField)
         {
-            this.analyzeTypeUsageInSymbol = analyzeTypeUsageInSymbol;
+            this.analyzeField = analyzeField;
         }
         
         public void AnalyzeField(SymbolAnalysisContext context)
         {
             var fieldSymbol = (IFieldSymbol)context.Symbol;
-            var violations = analyzeTypeUsageInSymbol(fieldSymbol, fieldSymbol.Type);
+            var violations = analyzeField(fieldSymbol);
             context.ReportDiagnostics(violations);
         }
     }

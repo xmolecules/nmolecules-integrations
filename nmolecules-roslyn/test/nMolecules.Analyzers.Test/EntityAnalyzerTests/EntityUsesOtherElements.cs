@@ -14,7 +14,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
     {
         private const int FieldLineNumber = 14;
         private const int CtorLineNumber = 15;
-        private const int PropertyLineNumber = 20;
+        private const int PropertyLineNumber = 23;
         private const int MethodLineNumber = 25;
         private const int EntityInMethodBodyLineNumber = 24;
 
@@ -26,7 +26,13 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
             var repositoryAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(CtorLineNumber, 45, CtorLineNumber, 50);
             var repositoryAsReturnValue = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
             var repositoryAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
-            await VerifyCS.VerifyAnalyzerAsync(entity, repositoryAsField, repositoryAsParameterInCtor, repositoryAsParameterInMethod, repositoryAsReturnValue);
+            var repositoryAsPropertyType = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
+            await VerifyCS.VerifyAnalyzerAsync(entity,
+                repositoryAsField,
+                repositoryAsParameterInCtor,
+                repositoryAsParameterInMethod,
+                repositoryAsReturnValue,
+                repositoryAsPropertyType);
         }
 
         [Fact(Skip = "WiP")]

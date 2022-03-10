@@ -16,10 +16,11 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                    GeneratedCodeAnalysisFlags.ReportDiagnostics);
             context.EnableConcurrentExecution();
-            var fieldAnalyzer = new FieldAnalyzer(Diagnostics.AnalyzeTypeInSymbol);
+            var fieldAnalyzer = new FieldAnalyzer(it => Diagnostics.AnalyzeTypeInSymbol(it, it.Type));
             context.RegisterSymbolActionForEntity(fieldAnalyzer.AnalyzeField, SymbolKind.Field);
             var methodAnalyzer = new MethodAnalyzer(Diagnostics.AnalyzeTypeInSymbol);
             context.RegisterSymbolActionForEntity(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
+            context.RegisterSymbolActionForEntity(PropertyAnalyzer.AnalyzeProperty, SymbolKind.Property);
         }
     }
 }

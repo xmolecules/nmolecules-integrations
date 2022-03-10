@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using NMolecules.Analyzers.Common;
+using static NMolecules.Analyzers.ValueObjectAnalyzers.Diagnostics;
 
 namespace NMolecules.Analyzers.ValueObjectAnalyzers
 {
@@ -12,9 +13,9 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
         {
         }
 
-        private static IEnumerable<Diagnostic> AnalyzeField(IFieldSymbol symbol, ITypeSymbol type)
+        private static IEnumerable<Diagnostic> AnalyzeField(IFieldSymbol symbol)
         {
-            return Diagnostics.AnalyzeTypeUsageInSymbol(symbol, type).Concat(EnsureFieldIsReadonly(symbol));
+            return AnalyzeTypeUsageInSymbol(symbol, symbol.Type).Concat(EnsureFieldIsReadonly(symbol));
         }
 
         private static IEnumerable<Diagnostic> EnsureFieldIsReadonly(IFieldSymbol fieldSymbol)

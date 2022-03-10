@@ -21,7 +21,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
         [Identity]
         public Guid Id { get; }
         
-        public Some<#= Session["type"] #> Value { get; }
+        public Some<#= Session["type"] #> Value { get; set; }
 
         public Some<#= Session["type"] #> SomeMethod(Some<#= Session["type"] #> <#= Session["name"] #>)
         {

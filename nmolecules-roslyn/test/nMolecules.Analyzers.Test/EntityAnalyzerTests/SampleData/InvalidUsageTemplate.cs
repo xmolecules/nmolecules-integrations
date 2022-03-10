@@ -67,7 +67,7 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
             
             #line default
             #line hidden
-            this.Write(" Value { get; }\r\n\r\n        public Some");
+            this.Write(" Value { get; set; }\r\n\r\n        public Some");
             
             #line 26 "C:\Users\LarsB\source\github\xmolecules\nmolecules-integrations\nmolecules-roslyn\test\nMolecules.Analyzers.Test\EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Session["type"]));
