@@ -6,6 +6,9 @@ namespace NMolecules.Analyzers.EntityAnalyzers
     {
         private const string Category = "Design";
         public const string EntitiesMustNotUseRepositoriesId = nameof(EntitiesMustNotUseRepositoriesId);
+        public const string EntitiesMustNotUseAggregateRootsId = nameof(EntitiesMustNotUseAggregateRootsId);
+
+        public const string EntitiesMustNotUseServicesId = nameof(EntitiesMustNotUseServicesId);
 
         public static readonly DiagnosticDescriptor EntitiesMustNotUseRepositoriesRule = new(
             EntitiesMustNotUseRepositoriesId,
@@ -19,6 +22,36 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseRepositoryDescription),
+                Resources.ResourceManager,
+                typeof(Resources)));
+
+        public static readonly DiagnosticDescriptor EntitiesMustNotUseAggregateRootsRule = new(
+            EntitiesMustNotUseAggregateRootsId,
+            new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootTitle),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootFormat),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
+            DiagnosticSeverity.Error,
+            true,
+            new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootDescription),
+                Resources.ResourceManager,
+                typeof(Resources)));
+        
+        public static readonly DiagnosticDescriptor EntitiesMustNotUseServicesRule = new(
+            EntitiesMustNotUseServicesId,
+            new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceTitle),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceFormat),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category,
+            DiagnosticSeverity.Error,
+            true,
+            new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
     }

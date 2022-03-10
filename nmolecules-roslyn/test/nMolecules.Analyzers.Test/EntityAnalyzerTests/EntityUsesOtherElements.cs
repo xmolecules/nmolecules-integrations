@@ -37,14 +37,46 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
                 repositoryInMethodBody);
         }
 
-        [Fact(Skip = "WiP")]
+        [Fact]
         public async Task Analyze_WithEntityUsesAggregate_EmitsCompilerError()
         {
             var entity = GenerateClass(AggregateRoot);
-            var aggregateAsField = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
-            await VerifyCS.VerifyAnalyzerAsync(entity, aggregateAsField);
+            var aggregateRootAsField = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(FieldLineNumber, 44, FieldLineNumber, 57);
+            var aggregateRootAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(CtorLineNumber, 48, CtorLineNumber, 53);
+            var aggregateRootAsReturnValue = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(MethodLineNumber, 34, MethodLineNumber, 44);
+            var aggregateRootAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(MethodLineNumber, 63, MethodLineNumber, 76);
+            var aggregateRootAsPropertyType = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(PropertyLineNumber, 34, PropertyLineNumber, 39);
+            var aggregateRootInMethodBody = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId)
+                .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 34);
+            await VerifyCS.VerifyAnalyzerAsync(entity,
+                aggregateRootAsField,
+                aggregateRootAsParameterInCtor,
+                aggregateRootAsParameterInMethod,
+                aggregateRootAsReturnValue,
+                aggregateRootAsPropertyType,
+                aggregateRootInMethodBody);
         }
 
+        [Fact]
+        public async Task Analyze_WithEntityUsesService_EmitsCompilerError()
+        {
+            var entity = GenerateClass(Service);
+            var serviceAsField = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
+            var serviceAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(CtorLineNumber, 42, CtorLineNumber, 47);
+            var serviceAsReturnValue = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
+            var serviceAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
+            var serviceAsPropertyType = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
+            var serviceInMethodBody = CompilerError(Rules.EntitiesMustNotUseServicesId)
+                .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 28);
+            await VerifyCS.VerifyAnalyzerAsync(entity,
+                serviceAsField,
+                serviceAsParameterInCtor,
+                serviceAsParameterInMethod,
+                serviceAsReturnValue,
+                serviceAsPropertyType,
+                serviceInMethodBody);
+        }
+        
         private static string GenerateClass(string type)
         {
             var invalidUsageTemplate = new InvalidUsageTemplate

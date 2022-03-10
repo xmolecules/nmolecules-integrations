@@ -61,6 +61,33 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entities should not reference aggregate roots..
+        /// </summary>
+        internal static string EntityMustNotUseAggregateRootDescription {
+            get {
+                return ResourceManager.GetString("EntityMustNotUseAggregateRootDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should not reference aggregate roots.
+        /// </summary>
+        internal static string EntityMustNotUseAggregateRootFormat {
+            get {
+                return ResourceManager.GetString("EntityMustNotUseAggregateRootFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should not reference aggregate roots.
+        /// </summary>
+        internal static string EntityMustNotUseAggregateRootTitle {
+            get {
+                return ResourceManager.GetString("EntityMustNotUseAggregateRootTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entities should not reference repositories..
         /// </summary>
         internal static string EntityMustNotUseRepositoryDescription {
@@ -84,6 +111,33 @@ namespace NMolecules.Analyzers {
         internal static string EntityMustNotUseRepositoryTitle {
             get {
                 return ResourceManager.GetString("EntityMustNotUseRepositoryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should not reference services..
+        /// </summary>
+        internal static string EntityMustNotUseServiceDescription {
+            get {
+                return ResourceManager.GetString("EntityMustNotUseServiceDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should not reference services.
+        /// </summary>
+        internal static string EntityMustNotUseServiceFormat {
+            get {
+                return ResourceManager.GetString("EntityMustNotUseServiceFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should not reference services.
+        /// </summary>
+        internal static string EntityMustNotUseServiceTitle {
+            get {
+                return ResourceManager.GetString("EntityMustNotUseServiceTitle", resourceCulture);
             }
         }
         

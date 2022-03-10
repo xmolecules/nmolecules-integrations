@@ -210,4 +210,28 @@
     <value>Entities should not reference repositories</value>
         <comment>The title of the diagnostic.</comment>
   </data>
+    <data name="EntityMustNotUseAggregateRootDescription" xml:space="preserve">
+    <value>Entities should not reference aggregate roots.</value>
+        <comment>An optional longer localizable description of the diagnostic.</comment>
+  </data>
+    <data name="EntityMustNotUseAggregateRootFormat" xml:space="preserve">
+    <value>Entities should not reference aggregate roots</value>
+        <comment>The format-able message the diagnostic displays.</comment>
+  </data>
+    <data name="EntityMustNotUseAggregateRootTitle" xml:space="preserve">
+    <value>Entities should not reference aggregate roots</value>
+        <comment>The title of the diagnostic.</comment>
+  </data>
+    <data name="EntityMustNotUseServiceDescription" xml:space="preserve">
+    <value>Entities should not reference services.</value>
+        <comment>An optional longer localizable description of the diagnostic.</comment>
+  </data>
+    <data name="EntityMustNotUseServiceFormat" xml:space="preserve">
+    <value>Entities should not reference services</value>
+        <comment>The format-able message the diagnostic displays.</comment>
+  </data>
+    <data name="EntityMustNotUseServiceTitle" xml:space="preserve">
+    <value>Entities should not reference services</value>
+        <comment>The title of the diagnostic.</comment>
+  </data>
 </root>
