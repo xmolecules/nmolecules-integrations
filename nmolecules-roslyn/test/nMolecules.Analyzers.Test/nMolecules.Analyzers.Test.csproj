@@ -33,7 +33,6 @@
 
     <ItemGroup>
         <EmbeddedResource Include="EntityAnalyzerTests\SampleData\ValidMaximumEntity.cs" />
-        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFiledNotReadonly.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectNotSealed.cs" />
@@ -74,6 +73,10 @@
         </Compile>
         <Compile Remove="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
         <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="RepositoryAnalyzerTests" />
     </ItemGroup>
 
 </Project>

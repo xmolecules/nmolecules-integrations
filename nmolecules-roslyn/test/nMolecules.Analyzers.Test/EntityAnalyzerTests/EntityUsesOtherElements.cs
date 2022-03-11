@@ -77,6 +77,13 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
                 serviceInMethodBody);
         }
         
+        [Fact]
+        public async Task Analyze_ValidEntity_DoesNotEmitAnyError()
+        {
+            var validAggregateRoot = SampleDataLoader.LoadFromNamespaceOf<EntityUsesOtherElements>("ValidMaximumEntity.cs");
+            await VerifyCS.VerifyAnalyzerAsync(validAggregateRoot);
+        }
+        
         private static string GenerateClass(string type)
         {
             var invalidUsageTemplate = new InvalidUsageTemplate

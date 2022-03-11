@@ -58,6 +58,13 @@ namespace NMolecules.Analyzers.Test.AggregateRootAnalyzerTests
                 serviceInMethodBody);
         }
         
+        [Fact]
+        public async Task Analyze_ValidAggregateRoot_DoesNotEmitAnyError()
+        {
+            var validAggregateRoot = SampleDataLoader.LoadFromNamespaceOf<AggregateRootUsesOtherElements>("ValidMaximumAggregate.cs");
+            await VerifyCS.VerifyAnalyzerAsync(validAggregateRoot);
+        }
+        
         private static string GenerateClass(string type)
         {
             var invalidUsageTemplate = new InvalidUsageTemplate

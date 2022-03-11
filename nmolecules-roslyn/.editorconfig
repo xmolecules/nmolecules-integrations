@@ -1795,7 +1795,7 @@ dotnet_diagnostic.CA1305.severity = warning
 dotnet_diagnostic.CA1307.severity = none
 
 # Normalize strings to uppercase
-dotnet_diagnostic.CA1308.severity = warning
+dotnet_diagnostic.CA1308.severity = none
 
 # Normalize strings to uppercase
 dotnet_diagnostic.CA1309.severity = none
