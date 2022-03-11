@@ -31,7 +31,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         [Fact]
         public async Task AnalyzeImmutability_WithFieldIsNotReadonly_EmitsCompilerError()
         {
-            var testCode = SampleDataLoader.LoadFromNamespaceOf<Immutablity>("ValueObjectWithFiledNotReadonly.cs");
+            var testCode = SampleDataLoader.LoadFromNamespaceOf<Immutablity>("ValueObjectWithFieldNotReadonly.cs");
             const int lineNumber = 9;
 
             var expectedCompilerError = CompilerError(Rules.ValueObjectsMustBeImmutableId)

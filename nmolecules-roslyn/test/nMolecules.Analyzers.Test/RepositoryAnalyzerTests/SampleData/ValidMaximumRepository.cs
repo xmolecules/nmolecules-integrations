@@ -2,7 +2,7 @@
 using NMolecules.DDD;
 using NMolecules.DDD.Attributes;
 
-namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
+namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests.SampleData
 {
     [ValueObject]
     public sealed class ValueObject : IEquatable<ValueObject>
@@ -46,13 +46,13 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
         public string Id { get; }
     }
     
-    [Entity]
-    public class ValidMaximumEntity
+    [AggregateRoot]
+    public class ValidAggregate
     {
         private Entity entity;
         private ValueObject valueObject;
 
-        public ValidMaximumEntity(Entity entity, ValueObject valueObject)
+        public ValidAggregate(Entity entity, ValueObject valueObject)
         {
             this.entity = entity;
             this.valueObject = valueObject;
@@ -83,6 +83,17 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests.SampleData
         {
             var someValueObject = new ValueObject("1");
             var someEntity = new Entity("2");
+        }
+    }
+
+    [Repository]
+    public class ValidMaximumRepository
+    {
+        public ValidAggregate LoadAggregate()
+        {
+            var valueObject = new ValueObject("some value");
+            var entity = new Entity("some id");
+            return new ValidAggregate(entity, valueObject);
         }
     }
 }

@@ -32,51 +32,91 @@
     </ItemGroup>
 
     <ItemGroup>
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFieldNotReadonly.cs" />
         <EmbeddedResource Include="EntityAnalyzerTests\SampleData\ValidMaximumEntity.cs" />
+        <EmbeddedResource Include="RepositoryAnalyzerTests\SampleData\ValidMaximumRepository.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectNotSealed.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithPublicPropertyGetter.cs" />
-        <Compile Remove="Attributes.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFieldNotReadonly.cs" />
+        <Compile Remove="EntityAnalyzerTests\SampleData\ValidMaximumEntity.cs" />
+        <Compile Remove="RepositoryAnalyzerTests\SampleData\ValidMaximumRepository.cs" />
         <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
         <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectNotSealed.cs" />
         <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectUsesEntity.cs" />
         <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFiledNotReadonly.cs" />
         <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />
         <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithPublicPropertyGetter.cs" />
-        <None Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFieldNotReadonly.cs" />
+        <Compile Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
             <Generator>TextTemplatingFilePreprocessor</Generator>
             <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
-        </None>
-        <None Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+        </Compile>
+        <Compile Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
             <Generator>TextTemplatingFilePreprocessor</Generator>
             <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
-        </None>
+        </Compile>
+        <Compile Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+          <Generator>TextTemplatingFilePreprocessor</Generator>
+          <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+        </Compile>
+        <Compile Update="RepositoryAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+          <Generator>TextTemplatingFilePreprocessor</Generator>
+          <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+        </Compile>
+        
         <Compile Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
-            <AutoGen>True</AutoGen>
-            <DesignTime>True</DesignTime>
-            <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
         <Compile Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>
             <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
-        <None Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
-          <Generator>TextTemplatingFilePreprocessor</Generator>
-          <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
-        </None>
+        <Compile Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
+        <Compile Update="RepositoryAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
         <Compile Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
           <AutoGen>True</AutoGen>
           <DesignTime>True</DesignTime>
           <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
-        <Compile Remove="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
-        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
+        <Compile Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
+        <Compile Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="RepositoryAnalyzerTests" />
+      <None Update="AggregateRootAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+      </None>
+      <None Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+      </None>
+      <None Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+      </None>
     </ItemGroup>
 
 </Project>
