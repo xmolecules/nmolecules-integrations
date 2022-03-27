@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using NMolecules.Analyzers.Common;
 using NMolecules.DDD;
@@ -22,6 +23,7 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
             context.RegisterSymbolActionFor<RepositoryAttribute>(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
             var propertyAnalyzer = new PropertyAnalyzer(it => Diagnostics.AnalyzeTypeInSymbol(it, it.Type));
             context.RegisterSymbolActionFor<RepositoryAttribute>(propertyAnalyzer.AnalyzeProperty, SymbolKind.Property);
+            context.RegisterSyntaxNodeActionForRepository(methodAnalyzer.AnalyzeDeclarations, SyntaxKind.LocalDeclarationStatement);
         }
     }
 }

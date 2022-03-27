@@ -38,14 +38,15 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests
                 .WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
             var serviceAsParameterInMethod = CompilerError(Rules.RepositoriesMustNotUseServicesId)
                 .WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
-            // var serviceUsedInMethodBody = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-            //     .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 31);
+            var serviceUsedInMethodBody = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+                .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 28);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
                 serviceAsField,
                 serviceAsProperty,
                 serviceAsParameterInCtor,
                 serviceAsParameterInMethod,
-                serviceAsReturnValue);
+                serviceAsReturnValue,
+                serviceUsedInMethodBody);
         }
 
         private static string GenerateClass(string type)
