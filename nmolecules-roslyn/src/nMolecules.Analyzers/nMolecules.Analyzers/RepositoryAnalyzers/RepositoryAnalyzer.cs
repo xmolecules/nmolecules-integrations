@@ -18,6 +18,9 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
             context.EnableConcurrentExecution();
             var fieldAnalyzer = new FieldAnalyzer(it => Diagnostics.AnalyzeTypeInSymbol(it, it.Type));
             context.RegisterSymbolActionFor<RepositoryAttribute>(fieldAnalyzer.AnalyzeField, SymbolKind.Field);
+            
+            var methodAnalyzer = new MethodAnalyzer(Diagnostics.AnalyzeTypeInSymbol);
+            context.RegisterSymbolActionFor<RepositoryAttribute>(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
         }
     }
 }

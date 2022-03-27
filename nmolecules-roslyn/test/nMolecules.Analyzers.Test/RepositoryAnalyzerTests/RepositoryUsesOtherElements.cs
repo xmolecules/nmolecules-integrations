@@ -30,18 +30,21 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests
             var testCode = GenerateClass(Service);
             var serviceAsField = CompilerError(Rules.RepositoriesMustNotUseServicesId)
                 .WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
-            // var serviceAsParameterInCtor = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-            //     .WithSpan(CtorLineNumber, 50, CtorLineNumber, 55);
+            var serviceAsParameterInCtor = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+                .WithSpan(CtorLineNumber, 46, CtorLineNumber, 51);
             // var serviceAsProperty = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-            //     .WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
-            // var serviceAsReturnValue = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-            //     .WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
-            // var serviceAsParameterInMethod = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-            //     .WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
+            //     .WithSpan(PropertyLineNumber 1, PropertyLineNumber, 36);
+            var serviceAsReturnValue = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+                .WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
+            var serviceAsParameterInMethod = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+                .WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
             // var serviceUsedInMethodBody = CompilerError(Rules.NoRepositoriesInValueObjectsId)
             //     .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 31);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
-                serviceAsField);
+                serviceAsField,
+                serviceAsParameterInCtor,
+                serviceAsParameterInMethod,
+                serviceAsReturnValue);
         }
 
         private static string GenerateClass(string type)
