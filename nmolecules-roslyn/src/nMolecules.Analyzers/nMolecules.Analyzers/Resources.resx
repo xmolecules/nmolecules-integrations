@@ -258,4 +258,16 @@
     <value>AggregateRoots should not reference services</value>
         <comment>The title of the diagnostic.</comment>
   </data>
+    <data name="RepositoryMustNotUseServiceDescription" xml:space="preserve">
+    <value>Repositories should not reference services.</value>
+        <comment>An optional longer localizable description of the diagnostic.</comment>
+  </data>
+    <data name="RepositoryMustNotUseServiceFormat" xml:space="preserve">
+    <value>Repositories should not reference services</value>
+        <comment>The format-able message the diagnostic displays.</comment>
+  </data>
+    <data name="RepositoryMustNotUseServiceTitle" xml:space="preserve">
+    <value>Repositories should not reference services</value>
+        <comment>The title of the diagnostic.</comment>
+  </data>
 </root>

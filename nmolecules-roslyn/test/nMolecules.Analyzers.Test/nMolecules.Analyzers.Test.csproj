@@ -102,6 +102,11 @@
           <DesignTime>True</DesignTime>
           <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
+        <Compile Update="RepositoryAnalyzerTests\SampleData\InvalidUsageTemplate.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -114,6 +119,10 @@
         <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
       </None>
       <None Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
+      </None>
+      <None Update="RepositoryAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
         <Generator>TextTemplatingFilePreprocessor</Generator>
         <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
       </None>

@@ -12,18 +12,18 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
 {
     public class ValueObjectUsesOtherElements
     {
-        private const int EntityFieldLineNumber = 14;
+        private const int FieldLineNumber = 14;
         private const int CtorLineNumber = 15;
         private const int PropertyLineNumber = 20;
         private const int MethodLineNumber = 22;
-        private const int EntityInMethodBodyLineNumber = 24;
+        private const int TypeInMethodBodyLineNumber = 24;
 
         [Fact]
         public async Task Analyze_WithValueObjectUsesEntity_EmitsCompilerError()
         {
             var testCode = GenerateClass(Entity);
             var entityAsField = CompilerError(Rules.NoEntitiesInValueObjectsId)
-                .WithSpan(EntityFieldLineNumber, 37, EntityFieldLineNumber, 43);
+                .WithSpan(FieldLineNumber, 37, FieldLineNumber, 43);
             var entityAsParameterInCtor = CompilerError(Rules.NoEntitiesInValueObjectsId)
                 .WithSpan(CtorLineNumber, 46, CtorLineNumber, 51);
             var entityAsProperty = CompilerError(Rules.NoEntitiesInValueObjectsId)
@@ -33,7 +33,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
             var entityAsParameterInMethod = CompilerError(Rules.NoEntitiesInValueObjectsId)
                 .WithSpan(MethodLineNumber, 49, MethodLineNumber, 55);
             var entityUsedInMethodBody = CompilerError(Rules.NoEntitiesInValueObjectsId)
-                .WithSpan(EntityInMethodBodyLineNumber, 17, EntityInMethodBodyLineNumber, 27);
+                .WithSpan(TypeInMethodBodyLineNumber, 17, TypeInMethodBodyLineNumber, 27);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
                 entityAsField,
                 entityAsParameterInCtor,
@@ -47,75 +47,75 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         public async Task Analyze_WithValueObjectUsesService_EmitsCompilerError()
         {
             var testCode = GenerateClass(Service);
-            var entityAsField = CompilerError(Rules.NoServicesInValueObjectsId)
-                .WithSpan(EntityFieldLineNumber, 38, EntityFieldLineNumber, 45);
-            var entityAsParameterInCtor = CompilerError(Rules.NoServicesInValueObjectsId)
+            var serviceAsField = CompilerError(Rules.NoServicesInValueObjectsId)
+                .WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
+            var serviceAsParameterInCtor = CompilerError(Rules.NoServicesInValueObjectsId)
                 .WithSpan(CtorLineNumber, 47, CtorLineNumber, 52);
-            var entityAsProperty = CompilerError(Rules.NoServicesInValueObjectsId)
+            var serviceAsProperty = CompilerError(Rules.NoServicesInValueObjectsId)
                 .WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
-            var entityAsReturnValue = CompilerError(Rules.NoServicesInValueObjectsId)
+            var serviceAsReturnValue = CompilerError(Rules.NoServicesInValueObjectsId)
                 .WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
-            var entityAsParameterInMethod = CompilerError(Rules.NoServicesInValueObjectsId)
+            var serviceAsParameterInMethod = CompilerError(Rules.NoServicesInValueObjectsId)
                 .WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
-            var entityUsedInMethodBody = CompilerError(Rules.NoServicesInValueObjectsId)
-                .WithSpan(EntityInMethodBodyLineNumber, 17, EntityInMethodBodyLineNumber, 28);
+            var serviceUsedInMethodBody = CompilerError(Rules.NoServicesInValueObjectsId)
+                .WithSpan(TypeInMethodBodyLineNumber, 17, TypeInMethodBodyLineNumber, 28);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
-                entityAsField,
-                entityAsParameterInCtor,
-                entityAsProperty,
-                entityAsReturnValue,
-                entityAsParameterInMethod,
-                entityUsedInMethodBody);
+                serviceAsField,
+                serviceAsParameterInCtor,
+                serviceAsProperty,
+                serviceAsReturnValue,
+                serviceAsParameterInMethod,
+                serviceUsedInMethodBody);
         }
 
         [Fact]
         public async Task Analyze_WithValueObjectUsesRepository_EmitsCompilerError()
         {
             var testCode = GenerateClass(Repository);
-            var entityAsField = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-                .WithSpan(EntityFieldLineNumber, 41, EntityFieldLineNumber, 51);
-            var entityAsParameterInCtor = CompilerError(Rules.NoRepositoriesInValueObjectsId)
+            var repositoryAsField = CompilerError(Rules.NoRepositoriesInValueObjectsId)
+                .WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
+            var repositoryAsParameterInCtor = CompilerError(Rules.NoRepositoriesInValueObjectsId)
                 .WithSpan(CtorLineNumber, 50, CtorLineNumber, 55);
-            var entityAsProperty = CompilerError(Rules.NoRepositoriesInValueObjectsId)
+            var repositoryAsProperty = CompilerError(Rules.NoRepositoriesInValueObjectsId)
                 .WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
-            var entityAsReturnValue = CompilerError(Rules.NoRepositoriesInValueObjectsId)
+            var repositoryAsReturnValue = CompilerError(Rules.NoRepositoriesInValueObjectsId)
                 .WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
-            var entityAsParameterInMethod = CompilerError(Rules.NoRepositoriesInValueObjectsId)
+            var repositoryAsParameterInMethod = CompilerError(Rules.NoRepositoriesInValueObjectsId)
                 .WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
-            var entityUsedInMethodBody = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-                .WithSpan(EntityInMethodBodyLineNumber, 17, EntityInMethodBodyLineNumber, 31);
+            var repositoryUsedInMethodBody = CompilerError(Rules.NoRepositoriesInValueObjectsId)
+                .WithSpan(TypeInMethodBodyLineNumber, 17, TypeInMethodBodyLineNumber, 31);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
-                entityAsField,
-                entityAsParameterInCtor,
-                entityAsProperty,
-                entityAsReturnValue,
-                entityAsParameterInMethod,
-                entityUsedInMethodBody);
+                repositoryAsField,
+                repositoryAsParameterInCtor,
+                repositoryAsProperty,
+                repositoryAsReturnValue,
+                repositoryAsParameterInMethod,
+                repositoryUsedInMethodBody);
         }
 
         [Fact]
         public async Task Analyze_WithValueObjectUsesAggregateRoot_EmitsCompilerError()
         {
             var testCode = GenerateClass(AggregateRoot);
-            var entityAsField = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
-                .WithSpan(EntityFieldLineNumber, 44, EntityFieldLineNumber, 57);
-            var entityAsParameterInCtor = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
+            var aggregateRootAsField = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
+                .WithSpan(FieldLineNumber, 44, FieldLineNumber, 57);
+            var aggregateRootAsParameterInCtor = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
                 .WithSpan(CtorLineNumber, 53, CtorLineNumber, 58);
-            var entityAsProperty = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
+            var aggregateRootAsProperty = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
                 .WithSpan(PropertyLineNumber, 34, PropertyLineNumber, 39);
-            var entityAsReturnValue = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
+            var aggregateRootAsReturnValue = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
                 .WithSpan(MethodLineNumber, 34, MethodLineNumber, 44);
-            var entityAsParameterInMethod = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
+            var aggregateRootAsParameterInMethod = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
                 .WithSpan(MethodLineNumber, 63, MethodLineNumber, 76);
-            var entityUsedInMethodBody = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
-                .WithSpan(EntityInMethodBodyLineNumber, 17, EntityInMethodBodyLineNumber, 34);
+            var aggregateRootUsedInMethodBody = CompilerError(Rules.NoAggregateRootsInValueObjectsId)
+                .WithSpan(TypeInMethodBodyLineNumber, 17, TypeInMethodBodyLineNumber, 34);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
-                entityAsField,
-                entityAsParameterInCtor,
-                entityAsProperty,
-                entityAsReturnValue,
-                entityAsParameterInMethod,
-                entityUsedInMethodBody);
+                aggregateRootAsField,
+                aggregateRootAsParameterInCtor,
+                aggregateRootAsProperty,
+                aggregateRootAsReturnValue,
+                aggregateRootAsParameterInMethod,
+                aggregateRootUsedInMethodBody);
         }
 
         private static string GenerateClass(string type)

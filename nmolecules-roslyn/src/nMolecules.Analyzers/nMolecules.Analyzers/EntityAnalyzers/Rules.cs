@@ -7,7 +7,6 @@ namespace NMolecules.Analyzers.EntityAnalyzers
         private const string Category = "Design";
         public const string EntitiesMustNotUseRepositoriesId = nameof(EntitiesMustNotUseRepositoriesId);
         public const string EntitiesMustNotUseAggregateRootsId = nameof(EntitiesMustNotUseAggregateRootsId);
-
         public const string EntitiesMustNotUseServicesId = nameof(EntitiesMustNotUseServicesId);
 
         public static readonly DiagnosticDescriptor EntitiesMustNotUseRepositoriesRule = new(

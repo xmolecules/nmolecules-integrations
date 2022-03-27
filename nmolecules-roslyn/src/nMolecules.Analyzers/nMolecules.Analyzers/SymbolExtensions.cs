@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.CodeAnalysis;
 using NMolecules.DDD;
 using NMolecules.DDD.Attributes;
@@ -7,6 +8,12 @@ namespace NMolecules.Analyzers
 {
     public static class SymbolExtensions
     {
+        public static bool Is<TAttribute>(this ITypeSymbol type) where TAttribute : Attribute
+        {
+            var attributes = type.GetAttributes();
+            return attributes.Any(it => it.AttributeClass!.Name.Equals(typeof(TAttribute).Name));
+        }
+        
         public static bool IsValueObject(this ITypeSymbol type)
         {
             var attributes = type.GetAttributes();
