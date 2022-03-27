@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace NMolecules.Analyzers.Common
+namespace NMolecules.Analyzers
 {
     public class FieldAnalyzer
     {

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis;
-using NMolecules.Analyzers.Common;
 using static NMolecules.Analyzers.ValueObjectAnalyzers.Diagnostics;
 
 namespace NMolecules.Analyzers.ValueObjectAnalyzers

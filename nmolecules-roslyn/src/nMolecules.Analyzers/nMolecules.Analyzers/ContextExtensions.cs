@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 
@@ -21,39 +20,6 @@ namespace NMolecules.Analyzers
             {
                 context.ReportDiagnostic(violation);
             }
-        }
-
-        public static void RegisterSymbolActionFor<TAttribute>(
-            this AnalysisContext analysisContext,
-            Action<SymbolAnalysisContext> action,
-            SymbolKind symbolKind) where TAttribute : Attribute
-        {
-            analysisContext.RegisterSymbolAction(IfCorrectType<TAttribute>(action, symbolKind), symbolKind);
-        }
-
-        private static Action<SymbolAnalysisContext> IfCorrectType<TAttribute>(
-            Action<SymbolAnalysisContext> analyze,
-            SymbolKind symbolKind) where TAttribute : Attribute
-        {
-            return symbolKind switch
-            {
-                SymbolKind.NamedType => it =>
-                {
-                    var classType = (INamedTypeSymbol)it.Symbol;
-                    if (classType.Is<TAttribute>())
-                    {
-                        analyze(it);
-                    }
-                },
-                _ => it =>
-                {
-                    var classType = it.Symbol.ContainingType;
-                    if (classType.Is<TAttribute>())
-                    {
-                        analyze(it);
-                    }
-                }
-            };
         }
     }
 }

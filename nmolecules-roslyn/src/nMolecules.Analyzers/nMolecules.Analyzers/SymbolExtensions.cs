@@ -14,18 +14,6 @@ namespace NMolecules.Analyzers
             return attributes.Any(it => it.AttributeClass!.Name.Equals(typeof(TAttribute).Name));
         }
         
-        public static bool IsValueObject(this ITypeSymbol type)
-        {
-            var attributes = type.GetAttributes();
-            return attributes.Any(IsValueObject);
-        }
-
-        private static bool IsValueObject(AttributeData attribute)
-        {
-            var isValueObject = attribute.AttributeClass!.Name.Equals(nameof(ValueObjectAttribute));
-            return isValueObject;
-        }
-
         public static bool IsEntity(this ITypeSymbol type)
         {
             var attributes = type.GetAttributes().ToArray();

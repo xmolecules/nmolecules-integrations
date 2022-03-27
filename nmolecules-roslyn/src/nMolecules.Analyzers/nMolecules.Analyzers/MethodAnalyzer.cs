@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace NMolecules.Analyzers.Common
+namespace NMolecules.Analyzers
 {
     public class MethodAnalyzer
     {

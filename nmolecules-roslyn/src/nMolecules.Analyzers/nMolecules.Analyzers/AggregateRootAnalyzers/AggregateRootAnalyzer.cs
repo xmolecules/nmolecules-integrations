@@ -2,29 +2,26 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
-using NMolecules.Analyzers.Common;
 using NMolecules.DDD.Attributes;
 
 namespace NMolecules.Analyzers.AggregateRootAnalyzers
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class AggregateRootAnalyzer : DiagnosticAnalyzer
+    public class AggregateRootAnalyzer : Analyzer<AggregateRootAttribute>
     {
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
-            ImmutableArray.Create(Rules.AggregateRootsMustNotUseRepositoriesRule, Rules.AggregateRootsMustNotUseServicesRule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(
+            Rules.AggregateRootsMustNotUseRepositoriesRule,
+            Rules.AggregateRootsMustNotUseServicesRule);
 
-        public override void Initialize(AnalysisContext context)
+        protected override void Initialize(AnalysisContext<AggregateRootAttribute> context)
         {
-            context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
-                                                   GeneratedCodeAnalysisFlags.ReportDiagnostics);
-            context.EnableConcurrentExecution();
             var fieldAnalyzer = new FieldAnalyzer(it => Diagnostics.AnalyzeTypeInSymbol(it, it.Type));
-            context.RegisterSymbolActionFor<AggregateRootAttribute>(fieldAnalyzer.AnalyzeField, SymbolKind.Field);
             var methodAnalyzer = new MethodAnalyzer(Diagnostics.AnalyzeTypeInSymbol);
-            context.RegisterSymbolActionFor<AggregateRootAttribute>(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
             var propertyAnalyzer = new PropertyAnalyzer(it => Diagnostics.AnalyzeTypeInSymbol(it, it.Type));
-            context.RegisterSymbolActionFor<AggregateRootAttribute>(propertyAnalyzer.AnalyzeProperty, SymbolKind.Property);
-            context.RegisterSyntaxNodeActionForAggregateRoot(methodAnalyzer.AnalyzeDeclarations, SyntaxKind.LocalDeclarationStatement);
+            context.RegisterSymbolAction(fieldAnalyzer.AnalyzeField, SymbolKind.Field);
+            context.RegisterSymbolAction(methodAnalyzer.AnalyzeMethod, SymbolKind.Method);
+            context.RegisterSymbolAction(propertyAnalyzer.AnalyzeProperty, SymbolKind.Property);
+            context.RegisterSyntaxNodeAction(methodAnalyzer.AnalyzeDeclarations, SyntaxKind.LocalDeclarationStatement);
         }
     }
 }
