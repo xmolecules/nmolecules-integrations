@@ -13,9 +13,9 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests
     {
         private const int FieldLineNumber = 14;
         private const int CtorLineNumber = 15;
-        private const int PropertyLineNumber = 23;
-        private const int MethodLineNumber = 25;
-        private const int TypeViolationInMethodBodyLineNumber = 27;
+        private const int PropertyLineNumber = 20;
+        private const int MethodLineNumber = 22;
+        private const int TypeViolationInMethodBodyLineNumber = 24;
 
         [Fact]
         public async Task Analyze_ValidRepository_DoesNotEmitCompilerErrors()
@@ -32,8 +32,8 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests
                 .WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
             var serviceAsParameterInCtor = CompilerError(Rules.RepositoriesMustNotUseServicesId)
                 .WithSpan(CtorLineNumber, 46, CtorLineNumber, 51);
-            // var serviceAsProperty = CompilerError(Rules.NoRepositoriesInValueObjectsId)
-            //     .WithSpan(PropertyLineNumber 1, PropertyLineNumber, 36);
+            var serviceAsProperty = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+                .WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
             var serviceAsReturnValue = CompilerError(Rules.RepositoriesMustNotUseServicesId)
                 .WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
             var serviceAsParameterInMethod = CompilerError(Rules.RepositoriesMustNotUseServicesId)
@@ -42,6 +42,7 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests
             //     .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 31);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
                 serviceAsField,
+                serviceAsProperty,
                 serviceAsParameterInCtor,
                 serviceAsParameterInMethod,
                 serviceAsReturnValue);

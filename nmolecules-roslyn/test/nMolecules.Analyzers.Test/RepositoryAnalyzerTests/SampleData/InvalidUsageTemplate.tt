@@ -17,9 +17,6 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests.SampleData
         {
             Value = value;
         }
-
-        [Identity]
-        public Guid Id { get; }
         
         public Some<#= Session["type"] #> Value { get; set; }
 
