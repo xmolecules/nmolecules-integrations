@@ -12,7 +12,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(Rules.EntitiesMustNotUseRepositoriesRule,
             Rules.EntitiesMustNotUseAggregateRootsRule,
             Rules.EntitiesMustNotUseServicesRule);
-
+        
         protected override void Initialize(AnalysisContext<EntityAttribute> context)
         {
             var fieldAnalyzer = new FieldAnalyzer(it => Diagnostics.AnalyzeTypeInSymbol(it, it.Type));
