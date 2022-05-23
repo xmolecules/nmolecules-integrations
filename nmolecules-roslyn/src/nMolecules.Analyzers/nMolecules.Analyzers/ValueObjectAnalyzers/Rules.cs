@@ -4,13 +4,13 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 {
     public static class Rules
     {
-        public const string ValueObjectsMustImplementIEquatableId = nameof(ValueObjectsMustImplementIEquatableId);
-        public const string ValueObjectsMustBeSealedId = nameof(ValueObjectsMustBeSealedId);
-        public const string NoEntitiesInValueObjectsId = nameof(NoEntitiesInValueObjectsId);
-        public const string NoServicesInValueObjectsId = nameof(NoServicesInValueObjectsId);
-        public const string NoRepositoriesInValueObjectsId = nameof(NoRepositoriesInValueObjectsId);
-        public const string NoAggregateRootsInValueObjectsId = nameof(NoAggregateRootsInValueObjectsId);
-        public const string ValueObjectsMustBeImmutableId = nameof(ValueObjectsMustBeImmutableId);
+        public const string ValueObjectsMustImplementIEquatableId = "ValueObjectsMustImplementIEquatable";
+        public const string ValueObjectsMustBeSealedId = "ValueObjectsMustBeSealed";
+        public const string NoEntitiesInValueObjectsId = "NoEntitiesInValueObjects";
+        public const string NoServicesInValueObjectsId = "NoServicesInValueObjects";
+        public const string NoRepositoriesInValueObjectsId = "NoRepositoriesInValueObjects";
+        public const string NoAggregateRootsInValueObjectsId = "NoAggregateRootsInValueObjects";
+        public const string ValueObjectsMustBeImmutableId = "ValueObjectsMustBeImmutable";
         private const string Category = "Design";
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseEntityRule = new(NoEntitiesInValueObjectsId,

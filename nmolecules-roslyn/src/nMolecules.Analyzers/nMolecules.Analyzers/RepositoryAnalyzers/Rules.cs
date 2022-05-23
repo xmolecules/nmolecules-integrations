@@ -5,7 +5,7 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
     public static class Rules
     {
         private const string Category = "Design";
-        public const string RepositoriesMustNotUseServicesId = nameof(RepositoriesMustNotUseServicesId);
+        public const string RepositoriesMustNotUseServicesId = "RepositoriesMustNotUseServices";
         
         public static readonly DiagnosticDescriptor RepositoriesMustNotUseServicesRule = new(
             RepositoriesMustNotUseServicesId,

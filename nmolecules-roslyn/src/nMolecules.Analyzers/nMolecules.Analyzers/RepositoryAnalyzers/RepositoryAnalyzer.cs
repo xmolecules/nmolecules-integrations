@@ -5,6 +5,7 @@ using NMolecules.DDD;
 
 namespace NMolecules.Analyzers.RepositoryAnalyzers
 {
+    [Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class RepositoryAnalyzer : Analyzer<RepositoryAttribute>
     {
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =

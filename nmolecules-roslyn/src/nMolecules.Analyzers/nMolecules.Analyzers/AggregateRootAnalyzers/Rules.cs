@@ -5,8 +5,8 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
     public static class Rules
     {
         private const string Category = "Design";
-        public const string AggregateRootsMustNotUseRepositoriesId = nameof(AggregateRootsMustNotUseRepositoriesId);
-        public const string AggregateRootsMustNotUseServicesId = nameof(AggregateRootsMustNotUseServicesId);
+        public const string AggregateRootsMustNotUseRepositoriesId = "AggregateRootsMustNotUseRepositories";
+        public const string AggregateRootsMustNotUseServicesId = "AggregateRootsMustNotUseServices";
 
         public static readonly DiagnosticDescriptor AggregateRootsMustNotUseRepositoriesRule = new(
             AggregateRootsMustNotUseRepositoriesId,

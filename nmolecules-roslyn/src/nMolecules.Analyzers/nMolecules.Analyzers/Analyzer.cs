@@ -9,8 +9,8 @@ namespace NMolecules.Analyzers
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                    GeneratedCodeAnalysisFlags.ReportDiagnostics);
-            context.EnableConcurrentExecution();
             Initialize(new AnalysisContext<TAttribute>(context));
+            context.EnableConcurrentExecution();
         }
 
         protected abstract void Initialize(AnalysisContext<TAttribute> context);
