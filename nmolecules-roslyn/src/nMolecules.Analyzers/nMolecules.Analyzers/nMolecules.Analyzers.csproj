@@ -10,6 +10,7 @@
         <RootNamespace>NMolecules.Analyzers</RootNamespace>
         <Nullable>enable</Nullable>
         <LangVersion>9</LangVersion>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,8 +18,8 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.2.0" />
-        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.2.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.1" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.0.1" />
         <PackageReference Include="NMolecules.DDD" Version="0.2.1" />
     </ItemGroup>
 
