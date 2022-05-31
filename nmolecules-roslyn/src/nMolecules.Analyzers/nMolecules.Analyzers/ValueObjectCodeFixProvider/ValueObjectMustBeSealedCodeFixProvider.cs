@@ -37,15 +37,7 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
 
             var makeClassSealed = CodeAction.Create(Title, it => MakeClassSealed(context.Document, declaration, it), Title);
             context.RegisterCodeFix(makeClassSealed, diagnostic);
-            var implementedIEquatable = CodeAction.Create(Title, it => ImplementIEquatable(context.Document, declaration, it), Title);
-            context.RegisterCodeFix(implementedIEquatable, diagnostic);
         }
-
-        private Task<Document> ImplementIEquatable(
-            Document contextDocument,
-            TypeDeclarationSyntax declaration,
-            CancellationToken it) =>
-            throw new NotImplementedException();
 
         private static async Task<Document> MakeClassSealed(
             Document document,
