@@ -4,8 +4,8 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
 {
     public static class Rules
     {
-        public const string AggregateRootsMustNotUseRepositoriesId = "AggregateRootsMustNotUseRepositories";
-        public const string AggregateRootsMustNotUseServicesId = "AggregateRootsMustNotUseServices";
+        public const string AggregateRootsMustNotUseRepositoriesId = "XMoleculesAggregateRoot0001";
+        public const string AggregateRootsMustNotUseServicesId = "XMoleculesAggregateRoot0002";
 
         public static readonly DiagnosticDescriptor AggregateRootsMustNotUseRepositoriesRule = new(
             AggregateRootsMustNotUseRepositoriesId,

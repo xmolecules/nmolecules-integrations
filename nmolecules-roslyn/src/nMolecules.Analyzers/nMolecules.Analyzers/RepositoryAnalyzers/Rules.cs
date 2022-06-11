@@ -4,7 +4,7 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
 {
     public static class Rules
     {
-        public const string RepositoriesMustNotUseServicesId = "RepositoriesMustNotUseServices";
+        public const string RepositoriesMustNotUseServicesId = "XMoleculesRepository0001";
         
         public static readonly DiagnosticDescriptor RepositoriesMustNotUseServicesRule = new(
             RepositoriesMustNotUseServicesId,

@@ -4,9 +4,9 @@ namespace NMolecules.Analyzers.EntityAnalyzers
 {
     public static class Rules
     {
-        public const string EntitiesMustNotUseRepositoriesId = "EntitiesMustNotUseRepositories";
-        public const string EntitiesMustNotUseAggregateRootsId = "EntitiesMustNotUseAggregateRoots";
-        public const string EntitiesMustNotUseServicesId = "EntitiesMustNotUseServices";
+        public const string EntitiesMustNotUseRepositoriesId = "XMoleculesEntity0001";
+        public const string EntitiesMustNotUseAggregateRootsId = "XMoleculesEntity0002";
+        public const string EntitiesMustNotUseServicesId = "XMoleculesEntity0003";
 
         public static readonly DiagnosticDescriptor EntitiesMustNotUseRepositoriesRule = new(
             EntitiesMustNotUseRepositoriesId,

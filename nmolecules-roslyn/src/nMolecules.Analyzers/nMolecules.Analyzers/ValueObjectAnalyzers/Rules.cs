@@ -4,13 +4,13 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 {
     public static class Rules
     {
-        public const string ValueObjectsMustImplementIEquatableId = "ValueObjectsMustImplementIEquatable";
-        public const string ValueObjectsMustBeSealedId = "ValueObjectsMustBeSealed";
-        public const string NoEntitiesInValueObjectsId = "NoEntitiesInValueObjects";
-        public const string NoServicesInValueObjectsId = "NoServicesInValueObjects";
-        public const string NoRepositoriesInValueObjectsId = "NoRepositoriesInValueObjects";
-        public const string NoAggregateRootsInValueObjectsId = "NoAggregateRootsInValueObjects";
-        public const string ValueObjectsMustBeImmutableId = "ValueObjectsMustBeImmutable";
+        public const string ValueObjectsMustImplementIEquatableId = "XMoleculesValueObject0001";
+        public const string ValueObjectsMustBeSealedId = "XMoleculesValueObject0002";
+        public const string NoEntitiesInValueObjectsId = "XMoleculesValueObject0003";
+        public const string NoServicesInValueObjectsId = "XMoleculesValueObject0004";
+        public const string NoRepositoriesInValueObjectsId = "XMoleculesValueObject0005";
+        public const string NoAggregateRootsInValueObjectsId = "XMoleculesValueObject0006";
+        public const string ValueObjectsMustBeImmutableId = "XMoleculesValueObject0007";
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseEntityRule = new(NoEntitiesInValueObjectsId,
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityTitle),
