@@ -4,7 +4,6 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
 {
     public static class Rules
     {
-        private const string Category = "Design";
         public const string AggregateRootsMustNotUseRepositoriesId = "AggregateRootsMustNotUseRepositories";
         public const string AggregateRootsMustNotUseServicesId = "AggregateRootsMustNotUseServices";
 
@@ -16,7 +15,7 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseRepositoryFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            Category,
+            Category.DDD,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseRepositoryDescription),
@@ -31,7 +30,7 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            Category,
+            Category.DDD,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceDescription),

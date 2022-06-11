@@ -4,7 +4,6 @@ namespace NMolecules.Analyzers.EntityAnalyzers
 {
     public static class Rules
     {
-        private const string Category = "Design";
         public const string EntitiesMustNotUseRepositoriesId = "EntitiesMustNotUseRepositories";
         public const string EntitiesMustNotUseAggregateRootsId = "EntitiesMustNotUseAggregateRoots";
         public const string EntitiesMustNotUseServicesId = "EntitiesMustNotUseServices";
@@ -17,7 +16,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseRepositoryFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            Category,
+            Category.DDD,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseRepositoryDescription),
@@ -32,7 +31,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            Category,
+            Category.DDD,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootDescription),
@@ -47,7 +46,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            Category,
+            Category.DDD,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceDescription),

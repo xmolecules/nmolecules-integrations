@@ -4,7 +4,6 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
 {
     public static class Rules
     {
-        private const string Category = "Design";
         public const string RepositoriesMustNotUseServicesId = "RepositoriesMustNotUseServices";
         
         public static readonly DiagnosticDescriptor RepositoriesMustNotUseServicesRule = new(
@@ -15,7 +14,7 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
             new LocalizableResourceString(nameof(Resources.RepositoryMustNotUseServiceFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            Category,
+            Category.DDD,
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.RepositoryMustNotUseServiceDescription),
