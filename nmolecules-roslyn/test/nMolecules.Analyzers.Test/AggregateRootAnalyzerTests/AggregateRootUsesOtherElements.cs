@@ -22,12 +22,12 @@ namespace NMolecules.Analyzers.Test.AggregateRootAnalyzerTests
         {
             var aggregateRoot = GenerateClass(Repository);
 
-            var repositoryAsField = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
-            var repositoryAsParameterInCtor = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesId).WithSpan(CtorLineNumber, 52, CtorLineNumber, 57);
-            var repositoryAsReturnValue = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
-            var repositoryAsParameterInMethod = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
-            var repositoryAsPropertyType = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesId).WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
-            var repositoryInMethodBody = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesId)
+            var repositoryAsField = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesRuleId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
+            var repositoryAsParameterInCtor = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesRuleId).WithSpan(CtorLineNumber, 52, CtorLineNumber, 57);
+            var repositoryAsReturnValue = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesRuleId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
+            var repositoryAsParameterInMethod = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesRuleId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
+            var repositoryAsPropertyType = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesRuleId).WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
+            var repositoryInMethodBody = CompilerError(Rules.AggregateRootsMustNotUseRepositoriesRuleId)
                 .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 31);
             await VerifyCS.VerifyAnalyzerAsync(aggregateRoot,
                 repositoryAsField,
@@ -42,12 +42,12 @@ namespace NMolecules.Analyzers.Test.AggregateRootAnalyzerTests
         public async Task Analyze_WithAggregateRootUsesService_EmitsCompilerError()
         {
             var aggregateRoot = GenerateClass(Service);
-            var serviceAsField = CompilerError(Rules.AggregateRootsMustNotUseServicesId).WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
-            var serviceAsParameterInCtor = CompilerError(Rules.AggregateRootsMustNotUseServicesId).WithSpan(CtorLineNumber, 49, CtorLineNumber, 54);
-            var serviceAsReturnValue = CompilerError(Rules.AggregateRootsMustNotUseServicesId).WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
-            var serviceAsParameterInMethod = CompilerError(Rules.AggregateRootsMustNotUseServicesId).WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
-            var serviceAsPropertyType = CompilerError(Rules.AggregateRootsMustNotUseServicesId).WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
-            var serviceInMethodBody = CompilerError(Rules.AggregateRootsMustNotUseServicesId)
+            var serviceAsField = CompilerError(Rules.AggregateRootsMustNotUseServicesRuleId).WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
+            var serviceAsParameterInCtor = CompilerError(Rules.AggregateRootsMustNotUseServicesRuleId).WithSpan(CtorLineNumber, 49, CtorLineNumber, 54);
+            var serviceAsReturnValue = CompilerError(Rules.AggregateRootsMustNotUseServicesRuleId).WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
+            var serviceAsParameterInMethod = CompilerError(Rules.AggregateRootsMustNotUseServicesRuleId).WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
+            var serviceAsPropertyType = CompilerError(Rules.AggregateRootsMustNotUseServicesRuleId).WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
+            var serviceInMethodBody = CompilerError(Rules.AggregateRootsMustNotUseServicesRuleId)
                 .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 28);
             await VerifyCS.VerifyAnalyzerAsync(aggregateRoot,
                 serviceAsField,

@@ -115,6 +115,33 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should have an id..
+        /// </summary>
+        internal static string AggregateRootShouldHaveIdDescription {
+            get {
+                return ResourceManager.GetString("AggregateRootShouldHaveIdDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should have an id.
+        /// </summary>
+        internal static string AggregateRootShouldHaveIdFormat {
+            get {
+                return ResourceManager.GetString("AggregateRootShouldHaveIdFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AggregateRoots should have an id.
+        /// </summary>
+        internal static string AggregateRootShouldHaveIdTitle {
+            get {
+                return ResourceManager.GetString("AggregateRootShouldHaveIdTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entities should not reference aggregate roots..
         /// </summary>
         internal static string EntityMustNotUseAggregateRootDescription {
@@ -196,7 +223,34 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Repositories should not reference services..
+        ///   Looks up a localized string similar to Entities should have an id..
+        /// </summary>
+        internal static string EntityShouldHaveIdDescription {
+            get {
+                return ResourceManager.GetString("EntityShouldHaveIdDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should have an id.
+        /// </summary>
+        internal static string EntityShouldHaveIdFormat {
+            get {
+                return ResourceManager.GetString("EntityShouldHaveIdFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities should have an id.
+        /// </summary>
+        internal static string EntityShouldHaveIdTitle {
+            get {
+                return ResourceManager.GetString("EntityShouldHaveIdTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repositories should have an id..
         /// </summary>
         internal static string RepositoryMustNotUseServiceDescription {
             get {

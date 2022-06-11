@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 using System.Text;
 
@@ -20,6 +21,11 @@ namespace NMolecules.Analyzers.Test
         private static string LoadResource(Assembly assembly, string resourcePath)
         {
             var manifestResourceStream = assembly.GetManifestResourceStream(resourcePath)!;
+            if (manifestResourceStream == null)
+            {
+                throw new InvalidOperationException($"Resource {resourcePath} not found in assembly {assembly.FullName}");
+            }
+            
             using var sr = new StreamReader(manifestResourceStream);
             return sr.ReadToEnd();
         }

@@ -258,8 +258,32 @@
     <value>AggregateRoots should not reference services</value>
         <comment>The title of the diagnostic.</comment>
   </data>
+    <data name="AggregateRootShouldHaveIdDescription" xml:space="preserve">
+    <value>AggregateRoots should have an id.</value>
+        <comment>An optional longer localizable description of the diagnostic.</comment>
+  </data>
+    <data name="AggregateRootShouldHaveIdFormat" xml:space="preserve">
+    <value>AggregateRoots should have an id</value>
+        <comment>The format-able message the diagnostic displays.</comment>
+  </data>
+    <data name="AggregateRootShouldHaveIdTitle" xml:space="preserve">
+    <value>AggregateRoots should have an id</value>
+        <comment>The title of the diagnostic.</comment>
+  </data>
+    <data name="EntityShouldHaveIdDescription" xml:space="preserve">
+    <value>Entities should have an id.</value>
+        <comment>An optional longer localizable description of the diagnostic.</comment>
+  </data>
+    <data name="EntityShouldHaveIdFormat" xml:space="preserve">
+    <value>Entities should have an id</value>
+        <comment>The format-able message the diagnostic displays.</comment>
+  </data>
+    <data name="EntityShouldHaveIdTitle" xml:space="preserve">
+    <value>Entities should have an id</value>
+        <comment>The title of the diagnostic.</comment>
+  </data>
     <data name="RepositoryMustNotUseServiceDescription" xml:space="preserve">
-    <value>Repositories should not reference services.</value>
+    <value>Repositories should have an id.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
     <data name="RepositoryMustNotUseServiceFormat" xml:space="preserve">

@@ -7,6 +7,7 @@ namespace NMolecules.Analyzers.EntityAnalyzers
         public const string EntitiesMustNotUseRepositoriesId = "XMoleculesEntity0001";
         public const string EntitiesMustNotUseAggregateRootsId = "XMoleculesEntity0002";
         public const string EntitiesMustNotUseServicesId = "XMoleculesEntity0003";
+        public const string EntitiesShouldHaveIdRuleId = "XMoleculesEntity0004";
 
         public static readonly DiagnosticDescriptor EntitiesMustNotUseRepositoriesRule = new(
             EntitiesMustNotUseRepositoriesId,
@@ -50,6 +51,21 @@ namespace NMolecules.Analyzers.EntityAnalyzers
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceDescription),
+                Resources.ResourceManager,
+                typeof(Resources)));
+        
+        public static readonly DiagnosticDescriptor EntitiesShouldHaveIdRule = new(
+            EntitiesShouldHaveIdRuleId,
+            new LocalizableResourceString(nameof(Resources.EntityShouldHaveIdTitle),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            new LocalizableResourceString(nameof(Resources.EntityShouldHaveIdFormat),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category.DDD,
+            DiagnosticSeverity.Error,
+            true,
+            new LocalizableResourceString(nameof(Resources.EntityShouldHaveIdDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
     }

@@ -4,11 +4,12 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
 {
     public static class Rules
     {
-        public const string AggregateRootsMustNotUseRepositoriesId = "XMoleculesAggregateRoot0001";
-        public const string AggregateRootsMustNotUseServicesId = "XMoleculesAggregateRoot0002";
+        public const string AggregateRootsMustNotUseRepositoriesRuleId = "XMoleculesAggregateRoot0001";
+        public const string AggregateRootsMustNotUseServicesRuleId = "XMoleculesAggregateRoot0002";
+        public const string AggregateRootsShouldHaveIdRuleId = "XMoleculesAggregateRoot0003";
 
         public static readonly DiagnosticDescriptor AggregateRootsMustNotUseRepositoriesRule = new(
-            AggregateRootsMustNotUseRepositoriesId,
+            AggregateRootsMustNotUseRepositoriesRuleId,
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseRepositoryTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
@@ -23,7 +24,7 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
                 typeof(Resources)));
         
         public static readonly DiagnosticDescriptor AggregateRootsMustNotUseServicesRule = new(
-            AggregateRootsMustNotUseServicesId,
+            AggregateRootsMustNotUseServicesRuleId,
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
@@ -34,6 +35,21 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
             DiagnosticSeverity.Error,
             true,
             new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceDescription),
+                Resources.ResourceManager,
+                typeof(Resources)));
+        
+        public static readonly DiagnosticDescriptor AggregateRootsShouldHaveIdRule = new(
+            AggregateRootsShouldHaveIdRuleId,
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldHaveIdTitle),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldHaveIdFormat),
+                Resources.ResourceManager,
+                typeof(Resources)),
+            Category.DDD,
+            DiagnosticSeverity.Error,
+            true,
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldHaveIdDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
     }

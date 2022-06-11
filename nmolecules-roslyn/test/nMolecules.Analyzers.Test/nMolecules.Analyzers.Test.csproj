@@ -9,6 +9,7 @@
         <RootNamespace>NMolecules.Analyzers.Test</RootNamespace>
         <LangVersion>9</LangVersion>
         <Nullable>enable</Nullable>
+        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
     </PropertyGroup>
 
     <ItemGroup>
@@ -32,10 +33,23 @@
     </ItemGroup>
 
     <ItemGroup>
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsField.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsFieldInBaseClass.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsFieldInPartialClass.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsProperty.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsPropertyInBaseClass.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsPropertyInPartialClass.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\AggregateRootWithoutId.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithIdAsField.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithIdAsFieldInBaseClass.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithIdAsFieldInPartialClass.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithIdAsProperty.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithIdAsPropertyInBaseClass.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithIdAsPropertyInPartialClass.cs" />
+        <EmbeddedResource Include="EntityAnalyzerTests\SampleData\EntityWithoutId.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithFieldNotReadonly.cs" />
         <EmbeddedResource Include="EntityAnalyzerTests\SampleData\ValidMaximumEntity.cs" />
         <EmbeddedResource Include="RepositoryAnalyzerTests\SampleData\ValidMaximumRepository.cs" />
-        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValidValueObject.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectWithoutIEquatable.cs" />
         <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValueObjectNotSealed.cs" />
@@ -107,6 +121,11 @@
           <DesignTime>True</DesignTime>
           <DependentUpon>InvalidUsageTemplate.tt</DependentUpon>
         </Compile>
+        <Compile Remove="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
+        <EmbeddedResource Include="AggregateRootAnalyzerTests\SampleData\ValidMaximumAggregate.cs" />
+        <Compile Remove="AggregateRootAnalyzerTests\SampleData\AggregateRootWithoutId.cs" />
+        <Compile Remove="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsProperty.cs" />
+        <Compile Remove="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsField.cs" />
     </ItemGroup>
 
     <ItemGroup>
