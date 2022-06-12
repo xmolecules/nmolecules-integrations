@@ -2,6 +2,8 @@
 dotnet_diagnostic.XMoleculesAggregateRoot0001.severity = warning
 # AggregateRoot should not use services
 dotnet_diagnostic.XMoleculesAggregateRoot0002.severity = warning
+# AggregateRoot should have id
+dotnet_diagnostic.XMoleculesAggregateRoot0003.severity = warning
 
 # Entity should not use repositories
 dotnet_diagnostic.XMoleculesEntity0001.severity = warning
@@ -9,6 +11,8 @@ dotnet_diagnostic.XMoleculesEntity0001.severity = warning
 dotnet_diagnostic.XMoleculesEntity0002.severity = warning
 # Entity should not use services
 dotnet_diagnostic.XMoleculesEntity0003.severity = warning
+# Entity should have id
+dotnet_diagnostic.XMoleculesEntity0004.severity = warning
 
 # Repository should not use services
 dotnet_diagnostic.XMoleculesRepository0001.severity = warning
