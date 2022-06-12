@@ -1,3 +1,10 @@
+[*.{appxmanifest,asax,ascx,aspx,axaml,build,cg,cginc,compute,cs,cshtml,dtd,feature,fs,fsi,fsscript,fsx,hlsl,hlsli,hlslinc,master,ml,mli,nuspec,paml,razor,resw,resx,shader,skin,usf,ush,vb,xaml,xamlx,xoml,xsd}]
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+[*]
+
 # AggregateRoot should not use repositories
 dotnet_diagnostic.XMoleculesAggregateRoot0001.severity = warning
 # AggregateRoot should not use services
