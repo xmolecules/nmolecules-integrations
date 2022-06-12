@@ -7,7 +7,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
     public static partial class VisualBasicCodeRefactoringVerifier<TCodeRefactoring>
         where TCodeRefactoring : CodeRefactoringProvider, new()
     {
-        public class Test : VisualBasicCodeRefactoringTest<TCodeRefactoring, XUnitVerifier>
+        public class VisualBasicTest : VisualBasicCodeRefactoringTest<TCodeRefactoring, XUnitVerifier>
         {
         }
     }

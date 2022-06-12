@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Testing;
@@ -8,6 +9,7 @@ using Microsoft.CodeAnalysis.Testing.Verifiers;
 
 namespace NMolecules.Analyzers.Test.Verifiers
 {
+    [SuppressMessage("Performance", "CA1823:Avoid unused private fields")]
     public static partial class CSharpAnalyzerVerifier<TAnalyzer>
         where TAnalyzer : DiagnosticAnalyzer, new()
     {
@@ -25,7 +27,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
         /// <inheritdoc cref="AnalyzerVerifier{TAnalyzer, TTest, TVerifier}.VerifyAnalyzerAsync(string, DiagnosticResult[])" />
         public static async Task VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
         {
-            var test = new Test
+            var test = new CSharpTest
             {
                 TestCode = source,
                 TestState =

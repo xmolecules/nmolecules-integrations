@@ -25,7 +25,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
         ///     cref="CodeRefactoringVerifier{TCodeRefactoring, TTest, TVerifier}.VerifyRefactoringAsync(string, DiagnosticResult[], string)" />
         public static async Task VerifyRefactoringAsync(string source, DiagnosticResult[] expected, string fixedSource)
         {
-            var test = new Test
+            var test = new VisualBasicTest
             {
                 TestCode = source,
                 FixedCode = fixedSource

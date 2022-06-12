@@ -7,7 +7,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
     public static partial class VisualBasicAnalyzerVerifier<TAnalyzer>
         where TAnalyzer : DiagnosticAnalyzer, new()
     {
-        public class Test : VisualBasicAnalyzerTest<TAnalyzer, XUnitVerifier>
+        public class VisualBasicTest : VisualBasicAnalyzerTest<TAnalyzer, XUnitVerifier>
         {
         }
     }

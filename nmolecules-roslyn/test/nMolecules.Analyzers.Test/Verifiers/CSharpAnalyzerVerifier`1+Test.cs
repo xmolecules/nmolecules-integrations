@@ -7,9 +7,9 @@ namespace NMolecules.Analyzers.Test.Verifiers
     public static partial class CSharpAnalyzerVerifier<TAnalyzer>
         where TAnalyzer : DiagnosticAnalyzer, new()
     {
-        public class Test : CSharpAnalyzerTest<TAnalyzer, XUnitVerifier>
+        public class CSharpTest : CSharpAnalyzerTest<TAnalyzer, XUnitVerifier>
         {
-            public Test()
+            public CSharpTest()
             {
                 SolutionTransforms.Add((solution, projectId) =>
                 {

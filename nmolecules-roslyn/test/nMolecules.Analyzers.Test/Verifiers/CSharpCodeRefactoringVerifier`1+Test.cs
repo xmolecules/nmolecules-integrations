@@ -7,9 +7,9 @@ namespace NMolecules.Analyzers.Test.Verifiers
     public static partial class CSharpCodeRefactoringVerifier<TCodeRefactoring>
         where TCodeRefactoring : CodeRefactoringProvider, new()
     {
-        public class Test : CSharpCodeRefactoringTest<TCodeRefactoring, XUnitVerifier>
+        public class CSharpTest : CSharpCodeRefactoringTest<TCodeRefactoring, XUnitVerifier>
         {
-            public Test()
+            public CSharpTest()
             {
                 SolutionTransforms.Add((solution, projectId) =>
                 {

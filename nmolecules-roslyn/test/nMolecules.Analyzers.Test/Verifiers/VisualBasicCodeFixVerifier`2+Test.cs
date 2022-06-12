@@ -9,7 +9,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
         where TAnalyzer : DiagnosticAnalyzer, new()
         where TCodeFix : CodeFixProvider, new()
     {
-        public class Test : VisualBasicCodeFixTest<TAnalyzer, TCodeFix, XUnitVerifier>
+        public class CSharpTest : VisualBasicCodeFixTest<TAnalyzer, TCodeFix, XUnitVerifier>
         {
         }
     }

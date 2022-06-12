@@ -26,7 +26,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
         ///     cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.VerifyAnalyzerAsync(string, DiagnosticResult[])" />
         public static async Task VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
         {
-            var test = new Test
+            var test = new CSharpTest
             {
                 TestCode = source
             };
@@ -52,7 +52,7 @@ namespace NMolecules.Analyzers.Test.Verifiers
         ///     cref="CodeFixVerifier{TAnalyzer, TCodeFix, TTest, TVerifier}.VerifyCodeFixAsync(string, DiagnosticResult[], string)" />
         public static async Task VerifyCodeFixAsync(string source, DiagnosticResult[] expected, string fixedSource)
         {
-            var test = new Test
+            var test = new CSharpTest
             {
                 TestCode = source,
                 FixedCode = fixedSource

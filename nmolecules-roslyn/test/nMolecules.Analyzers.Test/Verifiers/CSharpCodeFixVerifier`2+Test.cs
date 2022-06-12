@@ -9,9 +9,9 @@ namespace NMolecules.Analyzers.Test.Verifiers
         where TAnalyzer : DiagnosticAnalyzer, new()
         where TCodeFix : CodeFixProvider, new()
     {
-        public class Test : CSharpCodeFixTest<TAnalyzer, TCodeFix, XUnitVerifier>
+        public class CSharpTest : CSharpCodeFixTest<TAnalyzer, TCodeFix, XUnitVerifier>
         {
-            public Test()
+            public CSharpTest()
             {
                 SolutionTransforms.Add((solution, projectId) =>
                 {
