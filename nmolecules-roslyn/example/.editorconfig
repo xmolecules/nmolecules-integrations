@@ -23,7 +23,7 @@ dotnet_diagnostic.XMoleculesValueObject0001.severity = warning
 dotnet_diagnostic.XMoleculesValueObject0002.severity = warning
 # ValueObject should not use repositories
 dotnet_diagnostic.XMoleculesValueObject0003.severity = warning
-# ValueObject should not use services
+# ValueObject should not use AggregateRoots
 dotnet_diagnostic.XMoleculesValueObject0004.severity = warning
 # ValueObject should be immutable
 dotnet_diagnostic.XMoleculesValueObject0005.severity = warning
