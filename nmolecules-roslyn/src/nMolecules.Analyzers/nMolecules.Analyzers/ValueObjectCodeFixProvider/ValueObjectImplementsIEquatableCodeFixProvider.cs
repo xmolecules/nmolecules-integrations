@@ -37,7 +37,7 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
             context.RegisterCodeFix(implementedIEquatable, diagnostic);
         }
 
-        private async Task<Document> ImplementIEquatable(
+        private static async Task<Document> ImplementIEquatable(
             Document contextDocument,
             TypeDeclarationSyntax declaration,
             CancellationToken cancellationToken)

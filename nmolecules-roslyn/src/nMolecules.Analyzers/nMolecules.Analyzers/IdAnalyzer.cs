@@ -3,7 +3,6 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using NMolecules.Analyzers.AggregateRootAnalyzers;
 
 namespace NMolecules.Analyzers
 {

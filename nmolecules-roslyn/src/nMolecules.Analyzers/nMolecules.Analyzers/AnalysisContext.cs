@@ -48,18 +48,7 @@ namespace NMolecules.Analyzers
         {
             analysisContext.RegisterSyntaxNodeAction(IfCorrectType(analysis), syntaxKind);
         }
-        
-        public void RegisterClassAction(Action<SyntaxNodeAnalysisContext> analysis)
-        {
-            analysisContext.RegisterSyntaxNodeAction(it =>
-            {
-                if(it.ContainingSymbol is ITypeSymbol classSymbol && classSymbol.Is<TAttribute>())
-                {
-                    analysis(it);
-                }
-            }, SyntaxKind.ClassDeclaration);
-        }
-        
+
         private static Action<SyntaxNodeAnalysisContext> IfCorrectType(Action<SyntaxNodeAnalysisContext> analyze)
         {
             return it =>
