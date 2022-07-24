@@ -33,6 +33,7 @@ namespace NMolecules.Analyzers
                         analyze(it);
                     }
                 },
+                SymbolKind.Namespace => analyze,
                 _ => it =>
                 {
                     var classType = it.Symbol.ContainingType;

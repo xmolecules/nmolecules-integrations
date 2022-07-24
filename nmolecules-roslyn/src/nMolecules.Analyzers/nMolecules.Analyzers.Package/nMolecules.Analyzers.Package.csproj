@@ -5,6 +5,8 @@
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <LangVersion>10</LangVersion>
+        <Title>nMolecules DDD Analyzer</Title>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -18,7 +20,7 @@
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>nMolecules.Analyzers</Description>
         <PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>
-        <Copyright>Copyright</Copyright>
+        <Copyright></Copyright>
         <PackageTags>nMolecules.Analyzers, analyzers</PackageTags>
         <DevelopmentDependency>true</DevelopmentDependency>
         <NoPackageAnalysis>true</NoPackageAnalysis>
