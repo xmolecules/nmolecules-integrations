@@ -15,7 +15,7 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
             var testCode = SampleDataLoader.LoadFromNamespaceOf<ClassRequirements>("ValueObjectNotSealed.cs");
             const int lineNumber = 7;
 
-            var expectedCompilerError = CompilerError(Rules.ValueObjectsMustBeSealedId)
+            var expectedCompilerError = CompilerError(Rules.ValueObjectsShouldBeSealedId)
                 .WithSpan(lineNumber, 18, lineNumber, 38);
             await VerifyCS.VerifyAnalyzerAsync(testCode, expectedCompilerError);
         }

@@ -28,17 +28,17 @@ namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests
         public async Task Analyze_WithRepositoryUsesService_EmitsCompilerError()
         {
             var testCode = GenerateClass(Service);
-            var serviceAsField = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+            var serviceAsField = CompilerError(Rules.RepositoriesShouldNotUseServicesId)
                 .WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
-            var serviceAsParameterInCtor = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+            var serviceAsParameterInCtor = CompilerError(Rules.RepositoriesShouldNotUseServicesId)
                 .WithSpan(CtorLineNumber, 46, CtorLineNumber, 51);
-            var serviceAsProperty = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+            var serviceAsProperty = CompilerError(Rules.RepositoriesShouldNotUseServicesId)
                 .WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
-            var serviceAsReturnValue = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+            var serviceAsReturnValue = CompilerError(Rules.RepositoriesShouldNotUseServicesId)
                 .WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
-            var serviceAsParameterInMethod = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+            var serviceAsParameterInMethod = CompilerError(Rules.RepositoriesShouldNotUseServicesId)
                 .WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
-            var serviceUsedInMethodBody = CompilerError(Rules.RepositoriesMustNotUseServicesId)
+            var serviceUsedInMethodBody = CompilerError(Rules.RepositoriesShouldNotUseServicesId)
                 .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 28);
             await VerifyCS.VerifyAnalyzerAsync(testCode,
                 serviceAsField,

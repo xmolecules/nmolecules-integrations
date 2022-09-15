@@ -123,39 +123,39 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ValueObjectMustBeImmutableDescription" xml:space="preserve">
-    <value>Value objects must be immutable.</value>
+    <data name="ValueObjectShouldBeImmutableDescription" xml:space="preserve">
+    <value>Value objects should be immutable.</value>
   </data>
-    <data name="ValueObjectMustBeImmutableMessageFormat" xml:space="preserve">
-    <value>ValueObjects must be immutable</value>
+    <data name="ValueObjectShouldBeImmutableMessageFormat" xml:space="preserve">
+    <value>ValueObjects should be immutable</value>
   </data>
-    <data name="ValueObjectMustBeImmutableTitle" xml:space="preserve">
-    <value>ValueObjects must be immutable</value>
+    <data name="ValueObjectShouldBeImmutableTitle" xml:space="preserve">
+    <value>ValueObjects should be immutable</value>
   </data>
-    <data name="ValueObjectMustBeSealedDescription" xml:space="preserve">
-    <value>Value objects must be declared as sealed.</value>
+    <data name="ValueObjectShouldBeSealedDescription" xml:space="preserve">
+    <value>Value objects should be declared as sealed.</value>
   </data>
-    <data name="ValueObjectMustBeSealedMessageFormat" xml:space="preserve">
-    <value>Value objects must be declared as sealed</value>
+    <data name="ValueObjectShouldBeSealedMessageFormat" xml:space="preserve">
+    <value>Value objects should be declared as sealed</value>
   </data>
-    <data name="ValueObjectMustBeSealedTitle" xml:space="preserve">
-    <value>Value objects must be declared as sealed</value>
-  </data>
+    <data name="ValueObjectShouldBeSealedTitle" xml:space="preserve">
+    <value>Value objects should be declared as sealed</value>
+    </data>
     <data name="ValueObjectMustImplementIEquatableDescription" xml:space="preserve">
-    <value>Value objects must implement IEqautable&lt;ValueObject&gt;.</value>
+    <value>Value objects should implement IEqautable&lt;ValueObject&gt;.</value>
   </data>
     <data name="ValueObjectMustImplementIEquatableMessageFormat" xml:space="preserve">
-    <value>Value objects must implement IEqautable&lt;{0}&gt;</value>
-  </data>
+        <value>Value objects should implement IEqautable&lt;ValueObject&gt;</value>
+    </data>
     <data name="ValueObjectMustImplementIEquatableTitle" xml:space="preserve">
-    <value>Value objects must implement IEqautable&lt;ValueObject&gt;</value>
+    <value>Value objects should implement IEqautable&lt;ValueObject&gt;</value>
   </data>
     <data name="ValueObjectUsesEntityDescription" xml:space="preserve">
     <value>Value objects should not reference entities.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
     <data name="ValueObjectUsesEntityMessageFormat" xml:space="preserve">
-    <value>ValueObjects must not use entities</value>
+    <value>ValueObjects should not use entities</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
     <data name="ValueObjectUsesEntityTitle" xml:space="preserve">
@@ -167,7 +167,7 @@
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
     <data name="ValueObjectUsesServiceMessageFormat" xml:space="preserve">
-    <value>ValueObjects must not use services</value>
+    <value>ValueObjects should not use services</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
     <data name="ValueObjectUsesServiceTitle" xml:space="preserve">
@@ -179,7 +179,7 @@
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
     <data name="ValueObjectUsesRepositoryMessageFormat" xml:space="preserve">
-    <value>ValueObjects must not use repositories</value>
+    <value>ValueObjects should not use repositories</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
     <data name="ValueObjectUsesRepositoryTitle" xml:space="preserve">
@@ -191,70 +191,70 @@
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
     <data name="ValueObjectUsesAggregateRootMessageFormat" xml:space="preserve">
-    <value>ValueObjects must not use aggregate roots</value>
+    <value>ValueObjects should not use aggregate roots</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
     <data name="ValueObjectUsesAggregateRootTitle" xml:space="preserve">
     <value>ValueObject uses aggregate roots</value>
         <comment>The title of the diagnostic.</comment>
   </data>
-    <data name="EntityMustNotUseRepositoryDescription" xml:space="preserve">
+    <data name="EntityShouldNotUseRepositoryDescription" xml:space="preserve">
     <value>Entities should not reference repositories.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-    <data name="EntityMustNotUseRepositoryFormat" xml:space="preserve">
+    <data name="EntityShouldNotUseRepositoryFormat" xml:space="preserve">
     <value>Entities should not reference repositories</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
-    <data name="EntityMustNotUseRepositoryTitle" xml:space="preserve">
+    <data name="EntityShouldNotUseRepositoryTitle" xml:space="preserve">
     <value>Entities should not reference repositories</value>
         <comment>The title of the diagnostic.</comment>
   </data>
-    <data name="EntityMustNotUseAggregateRootDescription" xml:space="preserve">
+    <data name="EntityShouldNotUseAggregateRootDescription" xml:space="preserve">
     <value>Entities should not reference aggregate roots.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-    <data name="EntityMustNotUseAggregateRootFormat" xml:space="preserve">
+    <data name="EntityShouldNotUseAggregateRootFormat" xml:space="preserve">
     <value>Entities should not reference aggregate roots</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
-    <data name="EntityMustNotUseAggregateRootTitle" xml:space="preserve">
+    <data name="EntityShouldNotUseAggregateRootTitle" xml:space="preserve">
     <value>Entities should not reference aggregate roots</value>
         <comment>The title of the diagnostic.</comment>
   </data>
-    <data name="EntityMustNotUseServiceDescription" xml:space="preserve">
+    <data name="EntityShouldNotUseServiceDescription" xml:space="preserve">
     <value>Entities should not reference services.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-    <data name="EntityMustNotUseServiceFormat" xml:space="preserve">
+    <data name="EntityShouldNotUseServiceFormat" xml:space="preserve">
     <value>Entities should not reference services</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
-    <data name="EntityMustNotUseServiceTitle" xml:space="preserve">
+    <data name="EntityShouldNotUseServiceTitle" xml:space="preserve">
     <value>Entities should not reference services</value>
         <comment>The title of the diagnostic.</comment>
   </data>
-    <data name="AggregateRootMustNotUseRepositoryDescription" xml:space="preserve">
+    <data name="AggregateRootShouldNotUseRepositoryDescription" xml:space="preserve">
     <value>AggregateRoots should not reference repositories.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-    <data name="AggregateRootMustNotUseRepositoryFormat" xml:space="preserve">
+    <data name="AggregateRootShouldNotUseRepositoryFormat" xml:space="preserve">
     <value>AggregateRoots should not reference repositories</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
-    <data name="AggregateRootMustNotUseRepositoryTitle" xml:space="preserve">
+    <data name="AggregateRootShouldNotUseRepositoryTitle" xml:space="preserve">
     <value>AggregateRoots should not reference repositories</value>
         <comment>The title of the diagnostic.</comment>
   </data>
-    <data name="AggregateRootMustNotUseServiceDescription" xml:space="preserve">
+    <data name="AggregateRootShouldNotUseServiceDescription" xml:space="preserve">
     <value>AggregateRoots should not reference services.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-    <data name="AggregateRootMustNotUseServiceFormat" xml:space="preserve">
+    <data name="AggregateRootShouldNotUseServiceFormat" xml:space="preserve">
     <value>AggregateRoots should not reference services</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
-    <data name="AggregateRootMustNotUseServiceTitle" xml:space="preserve">
+    <data name="AggregateRootShouldNotUseServiceTitle" xml:space="preserve">
     <value>AggregateRoots should not reference services</value>
         <comment>The title of the diagnostic.</comment>
   </data>
@@ -282,15 +282,15 @@
     <value>Entities should have an id</value>
         <comment>The title of the diagnostic.</comment>
   </data>
-    <data name="RepositoryMustNotUseServiceDescription" xml:space="preserve">
+    <data name="RepositoryShouldNotUseServiceDescription" xml:space="preserve">
     <value>Repositories should have an id.</value>
         <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-    <data name="RepositoryMustNotUseServiceFormat" xml:space="preserve">
+    <data name="RepositoryShouldNotUseServiceFormat" xml:space="preserve">
     <value>Repositories should not reference services</value>
         <comment>The format-able message the diagnostic displays.</comment>
   </data>
-    <data name="RepositoryMustNotUseServiceTitle" xml:space="preserve">
+    <data name="RepositoryShouldNotUseServiceTitle" xml:space="preserve">
     <value>Repositories should not reference services</value>
         <comment>The title of the diagnostic.</comment>
   </data>

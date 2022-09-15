@@ -9,7 +9,7 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
     public class RepositoryAnalyzer : Analyzer<RepositoryAttribute>
     {
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
-            ImmutableArray.Create(Rules.RepositoriesMustNotUseServicesRule);
+            ImmutableArray.Create(Rules.RepositoriesShouldNotUseServicesRule);
 
         protected override void Initialize(AnalysisContext<RepositoryAttribute> context)
         {

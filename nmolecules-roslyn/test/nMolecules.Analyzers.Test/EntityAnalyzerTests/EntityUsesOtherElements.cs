@@ -21,12 +21,12 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
         public async Task Analyze_WithEntityUsesRepository_EmitsCompilerError()
         {
             var entity = GenerateClass(Repository);
-            var repositoryAsField = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
-            var repositoryAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(CtorLineNumber, 45, CtorLineNumber, 50);
-            var repositoryAsReturnValue = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
-            var repositoryAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
-            var repositoryAsPropertyType = CompilerError(Rules.EntitiesMustNotUseRepositoriesId).WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
-            var repositoryInMethodBody = CompilerError(Rules.EntitiesMustNotUseRepositoriesId)
+            var repositoryAsField = CompilerError(Rules.EntitiesShouldNotUseRepositoriesId).WithSpan(FieldLineNumber, 41, FieldLineNumber, 51);
+            var repositoryAsParameterInCtor = CompilerError(Rules.EntitiesShouldNotUseRepositoriesId).WithSpan(CtorLineNumber, 45, CtorLineNumber, 50);
+            var repositoryAsReturnValue = CompilerError(Rules.EntitiesShouldNotUseRepositoriesId).WithSpan(MethodLineNumber, 31, MethodLineNumber, 41);
+            var repositoryAsParameterInMethod = CompilerError(Rules.EntitiesShouldNotUseRepositoriesId).WithSpan(MethodLineNumber, 57, MethodLineNumber, 67);
+            var repositoryAsPropertyType = CompilerError(Rules.EntitiesShouldNotUseRepositoriesId).WithSpan(PropertyLineNumber, 31, PropertyLineNumber, 36);
+            var repositoryInMethodBody = CompilerError(Rules.EntitiesShouldNotUseRepositoriesId)
                 .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 31);
             await VerifyCS.VerifyAnalyzerAsync(entity,
                 repositoryAsField,
@@ -41,12 +41,12 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
         public async Task Analyze_WithEntityUsesAggregate_EmitsCompilerError()
         {
             var entity = GenerateClass(AggregateRoot);
-            var aggregateRootAsField = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(FieldLineNumber, 44, FieldLineNumber, 57);
-            var aggregateRootAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(CtorLineNumber, 48, CtorLineNumber, 53);
-            var aggregateRootAsReturnValue = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(MethodLineNumber, 34, MethodLineNumber, 44);
-            var aggregateRootAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(MethodLineNumber, 63, MethodLineNumber, 76);
-            var aggregateRootAsPropertyType = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId).WithSpan(PropertyLineNumber, 34, PropertyLineNumber, 39);
-            var aggregateRootInMethodBody = CompilerError(Rules.EntitiesMustNotUseAggregateRootsId)
+            var aggregateRootAsField = CompilerError(Rules.EntitiesShouldNotUseAggregateRootsId).WithSpan(FieldLineNumber, 44, FieldLineNumber, 57);
+            var aggregateRootAsParameterInCtor = CompilerError(Rules.EntitiesShouldNotUseAggregateRootsId).WithSpan(CtorLineNumber, 48, CtorLineNumber, 53);
+            var aggregateRootAsReturnValue = CompilerError(Rules.EntitiesShouldNotUseAggregateRootsId).WithSpan(MethodLineNumber, 34, MethodLineNumber, 44);
+            var aggregateRootAsParameterInMethod = CompilerError(Rules.EntitiesShouldNotUseAggregateRootsId).WithSpan(MethodLineNumber, 63, MethodLineNumber, 76);
+            var aggregateRootAsPropertyType = CompilerError(Rules.EntitiesShouldNotUseAggregateRootsId).WithSpan(PropertyLineNumber, 34, PropertyLineNumber, 39);
+            var aggregateRootInMethodBody = CompilerError(Rules.EntitiesShouldNotUseAggregateRootsId)
                 .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 34);
             await VerifyCS.VerifyAnalyzerAsync(entity,
                 aggregateRootAsField,
@@ -61,12 +61,12 @@ namespace NMolecules.Analyzers.Test.EntityAnalyzerTests
         public async Task Analyze_WithEntityUsesService_EmitsCompilerError()
         {
             var entity = GenerateClass(Service);
-            var serviceAsField = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
-            var serviceAsParameterInCtor = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(CtorLineNumber, 42, CtorLineNumber, 47);
-            var serviceAsReturnValue = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
-            var serviceAsParameterInMethod = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
-            var serviceAsPropertyType = CompilerError(Rules.EntitiesMustNotUseServicesId).WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
-            var serviceInMethodBody = CompilerError(Rules.EntitiesMustNotUseServicesId)
+            var serviceAsField = CompilerError(Rules.EntitiesShouldNotUseServicesId).WithSpan(FieldLineNumber, 38, FieldLineNumber, 45);
+            var serviceAsParameterInCtor = CompilerError(Rules.EntitiesShouldNotUseServicesId).WithSpan(CtorLineNumber, 42, CtorLineNumber, 47);
+            var serviceAsReturnValue = CompilerError(Rules.EntitiesShouldNotUseServicesId).WithSpan(MethodLineNumber, 28, MethodLineNumber, 38);
+            var serviceAsParameterInMethod = CompilerError(Rules.EntitiesShouldNotUseServicesId).WithSpan(MethodLineNumber, 51, MethodLineNumber, 58);
+            var serviceAsPropertyType = CompilerError(Rules.EntitiesShouldNotUseServicesId).WithSpan(PropertyLineNumber, 28, PropertyLineNumber, 33);
+            var serviceInMethodBody = CompilerError(Rules.EntitiesShouldNotUseServicesId)
                 .WithSpan(TypeViolationInMethodBodyLineNumber, 17, TypeViolationInMethodBodyLineNumber, 28);
             await VerifyCS.VerifyAnalyzerAsync(entity,
                 serviceAsField,

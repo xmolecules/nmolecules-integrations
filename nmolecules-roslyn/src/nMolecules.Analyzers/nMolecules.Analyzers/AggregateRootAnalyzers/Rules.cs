@@ -4,37 +4,37 @@ namespace NMolecules.Analyzers.AggregateRootAnalyzers
 {
     public static class Rules
     {
-        public const string AggregateRootsMustNotUseRepositoriesRuleId = "XMoleculesAggregateRoot0001";
-        public const string AggregateRootsMustNotUseServicesRuleId = "XMoleculesAggregateRoot0002";
+        public const string AggregateRootsShouldNotUseRepositoriesRuleId = "XMoleculesAggregateRoot0001";
+        public const string AggregateRootsShouldNotUseServicesRuleId = "XMoleculesAggregateRoot0002";
         public const string AggregateRootsShouldHaveIdRuleId = "XMoleculesAggregateRoot0003";
 
-        public static readonly DiagnosticDescriptor AggregateRootsMustNotUseRepositoriesRule = new(
-            AggregateRootsMustNotUseRepositoriesRuleId,
-            new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseRepositoryTitle),
+        public static readonly DiagnosticDescriptor AggregateRootsShouldNotUseRepositoriesRule = new(
+            AggregateRootsShouldNotUseRepositoriesRuleId,
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldNotUseRepositoryTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseRepositoryFormat),
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldNotUseRepositoryFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseRepositoryDescription),
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldNotUseRepositoryDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
         
-        public static readonly DiagnosticDescriptor AggregateRootsMustNotUseServicesRule = new(
-            AggregateRootsMustNotUseServicesRuleId,
-            new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceTitle),
+        public static readonly DiagnosticDescriptor AggregateRootsShouldNotUseServicesRule = new(
+            AggregateRootsShouldNotUseServicesRuleId,
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldNotUseServiceTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceFormat),
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldNotUseServiceFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.AggregateRootMustNotUseServiceDescription),
+            new LocalizableResourceString(nameof(Resources.AggregateRootShouldNotUseServiceDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
         

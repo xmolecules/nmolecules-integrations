@@ -12,14 +12,14 @@ using NMolecules.Analyzers.ValueObjectAnalyzers;
 
 namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ValueObjectMustBeSealedCodeFixProvider))]
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ValueObjectShouldBeSealedCodeFixProvider))]
     [Shared]
-    public class ValueObjectMustBeSealedCodeFixProvider : CodeFixProvider
+    public class ValueObjectShouldBeSealedCodeFixProvider : CodeFixProvider
     {
         private const string Title = "Make value object sealed";
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds =>
-            ImmutableArray.Create(Rules.ValueObjectsMustBeSealedId);
+            ImmutableArray.Create(Rules.ValueObjectsShouldBeSealedId);
 
         public sealed override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 
@@ -27,7 +27,7 @@ namespace NMolecules.Analyzers.ValueObjectCodeFixProvider
         {
             var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
 
-            var diagnostic = context.Diagnostics.First(it => it.Id.Equals(Rules.ValueObjectsMustBeSealedId));
+            var diagnostic = context.Diagnostics.First(it => it.Id.Equals(Rules.ValueObjectsShouldBeSealedId));
             var diagnosticSpan = diagnostic.Location.SourceSpan;
             var declaration = root!.FindToken(diagnosticSpan.Start).Parent!
                 .AncestorsAndSelf()

@@ -4,53 +4,53 @@ namespace NMolecules.Analyzers.EntityAnalyzers
 {
     public static class Rules
     {
-        public const string EntitiesMustNotUseRepositoriesId = "XMoleculesEntity0001";
-        public const string EntitiesMustNotUseAggregateRootsId = "XMoleculesEntity0002";
-        public const string EntitiesMustNotUseServicesId = "XMoleculesEntity0003";
+        public const string EntitiesShouldNotUseRepositoriesId = "XMoleculesEntity0001";
+        public const string EntitiesShouldNotUseAggregateRootsId = "XMoleculesEntity0002";
+        public const string EntitiesShouldNotUseServicesId = "XMoleculesEntity0003";
         public const string EntitiesShouldHaveIdRuleId = "XMoleculesEntity0004";
 
-        public static readonly DiagnosticDescriptor EntitiesMustNotUseRepositoriesRule = new(
-            EntitiesMustNotUseRepositoriesId,
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseRepositoryTitle),
+        public static readonly DiagnosticDescriptor EntitiesShouldNotUseRepositoriesRule = new(
+            EntitiesShouldNotUseRepositoriesId,
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseRepositoryTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseRepositoryFormat),
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseRepositoryFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseRepositoryDescription),
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseRepositoryDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
 
-        public static readonly DiagnosticDescriptor EntitiesMustNotUseAggregateRootsRule = new(
-            EntitiesMustNotUseAggregateRootsId,
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootTitle),
+        public static readonly DiagnosticDescriptor EntitiesShouldNotUseAggregateRootsRule = new(
+            EntitiesShouldNotUseAggregateRootsId,
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseAggregateRootTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootFormat),
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseAggregateRootFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseAggregateRootDescription),
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseAggregateRootDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
         
-        public static readonly DiagnosticDescriptor EntitiesMustNotUseServicesRule = new(
-            EntitiesMustNotUseServicesId,
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceTitle),
+        public static readonly DiagnosticDescriptor EntitiesShouldNotUseServicesRule = new(
+            EntitiesShouldNotUseServicesId,
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseServiceTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceFormat),
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseServiceFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.EntityMustNotUseServiceDescription),
+            new LocalizableResourceString(nameof(Resources.EntityShouldNotUseServiceDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
         

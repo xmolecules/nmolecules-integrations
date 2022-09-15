@@ -10,9 +10,9 @@ namespace NMolecules.Analyzers.EntityAnalyzers
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class EntityAnalyzer : Analyzer<EntityAttribute>
     {
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(Rules.EntitiesMustNotUseRepositoriesRule,
-            Rules.EntitiesMustNotUseAggregateRootsRule,
-            Rules.EntitiesMustNotUseServicesRule,
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(Rules.EntitiesShouldNotUseRepositoriesRule,
+            Rules.EntitiesShouldNotUseAggregateRootsRule,
+            Rules.EntitiesShouldNotUseServicesRule,
             Rules.EntitiesShouldHaveIdRule);
         
         protected override void Initialize(AnalysisContext<EntityAttribute> context)

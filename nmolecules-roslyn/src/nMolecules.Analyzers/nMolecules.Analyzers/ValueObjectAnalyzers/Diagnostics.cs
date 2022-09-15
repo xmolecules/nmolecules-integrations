@@ -6,11 +6,11 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 {
     public static class Diagnostics
     {
-        public static Diagnostic ViolatesImmutability(this ISymbol symbol) => symbol.Diagnostic(ValueObjectMustBeImmutableRule);
+        public static Diagnostic ViolatesImmutability(this ISymbol symbol) => symbol.Diagnostic(ValueObjectShouldBeImmutableRule);
 
         public static Diagnostic DoesNotImplementIEquatable(this ISymbol symbol) => symbol.Diagnostic(ValueObjectMustImplementIEquatableRule);
 
-        public static Diagnostic IsNotSealed(this ISymbol symbol) => symbol.Diagnostic(ValueObjectMustBeSealedRule);
+        public static Diagnostic IsNotSealed(this ISymbol symbol) => symbol.Diagnostic(ValueObjectShouldBeSealedRule);
 
         public static IEnumerable<Diagnostic> AnalyzeTypeUsageInSymbol(ISymbol symbol, ITypeSymbol type)
         {

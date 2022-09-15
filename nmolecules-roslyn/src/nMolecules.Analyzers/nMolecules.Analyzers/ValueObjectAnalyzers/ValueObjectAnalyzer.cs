@@ -14,9 +14,9 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
             ValueObjectMustNotUseServiceRule,
             ValueObjectMustNotUseRepositoryRule,
             ValueObjectMustNotUseAggregateRootRule,
-            ValueObjectMustBeImmutableRule,
+            ValueObjectShouldBeImmutableRule,
             ValueObjectMustImplementIEquatableRule,
-            ValueObjectMustBeSealedRule);
+            ValueObjectShouldBeSealedRule);
 
         protected override void Initialize(AnalysisContext<ValueObjectAttribute> context)
         {

@@ -8,9 +8,9 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
         public const string NoServicesInValueObjectsId = "XMoleculesValueObject0002";
         public const string NoRepositoriesInValueObjectsId = "XMoleculesValueObject0003";
         public const string NoAggregateRootsInValueObjectsId = "XMoleculesValueObject0004";
-        public const string ValueObjectsMustBeImmutableId = "XMoleculesValueObject0005";
+        public const string ValueObjectsShouldBeImmutableId = "XMoleculesValueObject0005";
         public const string ValueObjectsMustImplementIEquatableId = "XMoleculesValueObject1001";
-        public const string ValueObjectsMustBeSealedId = "XMoleculesValueObject1002";
+        public const string ValueObjectsShouldBeSealedId = "XMoleculesValueObject1002";
 
         public static readonly DiagnosticDescriptor ValueObjectMustNotUseEntityRule = new(NoEntitiesInValueObjectsId,
             new LocalizableResourceString(nameof(Resources.ValueObjectUsesEntityTitle),
@@ -68,17 +68,17 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
                 Resources.ResourceManager,
                 typeof(Resources)));
 
-        public static readonly DiagnosticDescriptor ValueObjectMustBeImmutableRule = new(ValueObjectsMustBeImmutableId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableTitle),
+        public static readonly DiagnosticDescriptor ValueObjectShouldBeImmutableRule = new(ValueObjectsShouldBeImmutableId,
+            new LocalizableResourceString(nameof(Resources.ValueObjectShouldBeImmutableTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableMessageFormat),
+            new LocalizableResourceString(nameof(Resources.ValueObjectShouldBeImmutableMessageFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeImmutableDescription),
+            new LocalizableResourceString(nameof(Resources.ValueObjectShouldBeImmutableDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
 
@@ -96,17 +96,17 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
                 Resources.ResourceManager,
                 typeof(Resources)));
 
-        public static readonly DiagnosticDescriptor ValueObjectMustBeSealedRule = new(ValueObjectsMustBeSealedId,
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedTitle),
+        public static readonly DiagnosticDescriptor ValueObjectShouldBeSealedRule = new(ValueObjectsShouldBeSealedId,
+            new LocalizableResourceString(nameof(Resources.ValueObjectShouldBeSealedTitle),
                 Resources.ResourceManager,
                 typeof(Resources)),
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedMessageFormat),
+            new LocalizableResourceString(nameof(Resources.ValueObjectShouldBeSealedMessageFormat),
                 Resources.ResourceManager,
                 typeof(Resources)),
             Category.DDD,
             DiagnosticSeverity.Error,
             true,
-            new LocalizableResourceString(nameof(Resources.ValueObjectMustBeSealedDescription),
+            new LocalizableResourceString(nameof(Resources.ValueObjectShouldBeSealedDescription),
                 Resources.ResourceManager,
                 typeof(Resources)));
     }

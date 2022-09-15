@@ -13,6 +13,6 @@ namespace NMolecules.Analyzers.RepositoryAnalyzers
             }
         }
 
-        private static Diagnostic ViolatesServiceUsage(this ISymbol symbol) => symbol.Diagnostic(Rules.RepositoriesMustNotUseServicesRule);
+        private static Diagnostic ViolatesServiceUsage(this ISymbol symbol) => symbol.Diagnostic(Rules.RepositoriesShouldNotUseServicesRule);
     }
 }
