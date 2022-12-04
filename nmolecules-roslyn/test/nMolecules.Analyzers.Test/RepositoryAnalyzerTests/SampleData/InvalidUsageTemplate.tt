@@ -2,7 +2,7 @@
 namespace NMolecules.Analyzers.Test.RepositoryAnalyzerTests.SampleData
 {
     using System;
-    using NMolecules.DDD;using NMolecules.DDD.Attributes; // Needed for current inconsistencies in namespaces in attributes
+    using NMolecules.DDD;
 
     [<#= Session["type"] #>]
     public class Some<#= Session["type"] #>

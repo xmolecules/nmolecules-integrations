@@ -31,7 +31,7 @@
         <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing.MSTest" Version="1.1.1" />
         <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing.MSTest" Version="1.1.1" />
         <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing.MSTest" Version="1.1.1" />
-        <PackageReference Include="NMolecules.DDD" Version="0.2.1" />
+        <PackageReference Include="NMolecules.DDD" Version="0.2.2" />
         <PackageReference Include="System.CodeDom" Version="6.0.0" />
         <PackageReference Include="xunit" Version="2.4.1" />
     </ItemGroup>
@@ -142,7 +142,7 @@
         <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
       </None>
       <None Update="EntityAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
-        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <Generator>TextTemplatingFileGenerator</Generator>
         <LastGenOutput>InvalidUsageTemplate.cs</LastGenOutput>
       </None>
       <None Update="ValueObjectAnalyzerTests\SampleData\InvalidUsageTemplate.tt">
