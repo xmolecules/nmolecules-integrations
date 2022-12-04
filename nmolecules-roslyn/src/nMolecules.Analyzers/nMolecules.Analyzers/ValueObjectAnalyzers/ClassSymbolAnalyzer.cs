@@ -15,7 +15,7 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
 
         private static void EnsureValueObjectIsSealed(SymbolAnalysisContext context, INamedTypeSymbol namedTypeSymbol)
         {
-            if (!namedTypeSymbol.IsSealed)
+            if (!namedTypeSymbol.IsSealed && !namedTypeSymbol.IsValueType)
             {
                 context.ReportDiagnostic(namedTypeSymbol.IsNotSealed());
             }
@@ -25,18 +25,21 @@ namespace NMolecules.Analyzers.ValueObjectAnalyzers
             SymbolAnalysisContext context,
             INamedTypeSymbol namedTypeSymbol)
         {
-            var implementsIEquatable = namedTypeSymbol.AllInterfaces.Any(it =>
+            if (!namedTypeSymbol.IsEnum())
             {
-                var implements = it.Name.Equals("IEquatable");
-                implements &= it.TypeArguments.Any(tp =>
-                    tp.Name.Equals(namedTypeSymbol.Name) &&
-                    SymbolEqualityComparer.Default.Equals(tp.ContainingNamespace, namedTypeSymbol.ContainingNamespace));
-                return implements;
-            });
+                var implementsIEquatable = namedTypeSymbol.AllInterfaces.Any(it =>
+                {
+                    var implements = it.Name.Equals("IEquatable");
+                    implements &= it.TypeArguments.Any(tp =>
+                        tp.Name.Equals(namedTypeSymbol.Name) &&
+                        SymbolEqualityComparer.Default.Equals(tp.ContainingNamespace, namedTypeSymbol.ContainingNamespace));
+                    return implements;
+                });
 
-            if (!implementsIEquatable)
-            {
-                context.ReportDiagnostic(namedTypeSymbol.DoesNotImplementIEquatable());
+                if (!implementsIEquatable)
+                {
+                    context.ReportDiagnostic(namedTypeSymbol.DoesNotImplementIEquatable());
+                }
             }
         }
     }

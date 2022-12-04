@@ -37,6 +37,8 @@ namespace NMolecules.Analyzers
             return attributes.Any(it => it.AttributeClass!.Name.Equals(nameof(AggregateRootAttribute)));
         }
 
+        public static bool IsEnum(this ITypeSymbol symbol) => symbol.TypeKind == TypeKind.Enum;
+
         public static Diagnostic Diagnostic(
             this ISymbol symbol,
             DiagnosticDescriptor descriptor,

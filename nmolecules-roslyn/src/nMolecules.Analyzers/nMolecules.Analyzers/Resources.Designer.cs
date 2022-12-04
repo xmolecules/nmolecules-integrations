@@ -276,7 +276,7 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value objects should implement IEqautable&lt;ValueObject&gt;..
+        ///   Looks up a localized string similar to Value objects should implement IEquatable&lt;ValueObject&gt;..
         /// </summary>
         internal static string ValueObjectMustImplementIEquatableDescription {
             get {
@@ -285,7 +285,7 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value objects should implement IEqautable&lt;ValueObject&gt;.
+        ///   Looks up a localized string similar to Value objects should implement IEquatable&lt;ValueObject&gt;.
         /// </summary>
         internal static string ValueObjectMustImplementIEquatableMessageFormat {
             get {
@@ -294,7 +294,7 @@ namespace NMolecules.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value objects should implement IEqautable&lt;ValueObject&gt;.
+        ///   Looks up a localized string similar to Value objects should implement IEquatable&lt;ValueObject&gt;.
         /// </summary>
         internal static string ValueObjectMustImplementIEquatableTitle {
             get {

@@ -23,13 +23,20 @@ namespace NMolecules.Analyzers.Test.ValueObjectAnalyzerTests
         [Fact]
         public async Task AnalyzeClass_WithValueObjectDoesNotImplementIEquatable_EmitsCompilerError()
         {
-            var testCode =
-                SampleDataLoader.LoadFromNamespaceOf<ClassRequirements>("ValueObjectWithoutIEquatable.cs");
+            var testCode = SampleDataLoader.LoadFromNamespaceOf<ClassRequirements>("ValueObjectWithoutIEquatable.cs");
             const int lineNumber = 7;
 
             var expectedCompilerError = CompilerError(Rules.ValueObjectsMustImplementIEquatableId)
                 .WithSpan(lineNumber, 25, lineNumber, 45);
             await VerifyCS.VerifyAnalyzerAsync(testCode, expectedCompilerError);
+        }
+
+        [Fact]
+        public async Task AnalyzeEnum_DoesNotEnforceIEquatableOrSealed()
+        {
+            var testCode = SampleDataLoader.LoadFromNamespaceOf<ClassRequirements>("ValidEnumAsValueObject.cs");
+            
+            await VerifyCS.VerifyAnalyzerAsync(testCode, EmptyDiagnosticResults);
         }
     }
 }

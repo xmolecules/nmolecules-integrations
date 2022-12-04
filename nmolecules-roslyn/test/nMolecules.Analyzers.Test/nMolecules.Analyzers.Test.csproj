@@ -134,6 +134,8 @@
         <Compile Remove="AggregateRootAnalyzerTests\SampleData\AggregateRootWithoutId.cs" />
         <Compile Remove="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsProperty.cs" />
         <Compile Remove="AggregateRootAnalyzerTests\SampleData\AggregateRootWithIdAsField.cs" />
+        <Compile Remove="ValueObjectAnalyzerTests\SampleData\ValidEnumAsValueObject.cs" />
+        <EmbeddedResource Include="ValueObjectAnalyzerTests\SampleData\ValidEnumAsValueObject.cs" />
     </ItemGroup>
 
     <ItemGroup>
